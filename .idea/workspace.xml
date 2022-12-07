@@ -1,0 +1,988 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7d0eb3a4-ee4e-457d-9617-4ccbadbd416f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/jobinput/static/jobinput/images/PCA_classification.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jobinput/static/jobinput/images/heatmap.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jobinput/static/jobinput/js/mult_view2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jobinput/static/jobinput/python_script/IMU_KRT_classifier.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jobinput/static/jobinput/python_script/list_of_gene_sets_used.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jobinput/static/jobinput/python_script/list_of_model_rf_knn_gnb_svm_elastic.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home_backup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/runclassifier.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CoronoBramarsProject/covidproject/covidproject/src/main/groovy/covidproject/org/DataValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LRPath/robinhood/buttons.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../LRPath/robinhood/buttons.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LRPath/robinhood/inputsentence.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../LRPath/robinhood/inputsentence.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LRPath/robinhood/option_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../LRPath/robinhood/option_gui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LRPath/robinhood/parse_.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../LRPath/robinhood/parse_.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LRPath/robinhood/thetawarrior.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../LRPath/robinhood/thetawarrior.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LRPath/robinhood/tweeterParse.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../LRPath/robinhood/tweeterParse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobinput/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/css/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/js/d3.js" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/js/d3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/js/hzome_functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/js/hzome_functions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/js/jquery-1.11.2.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/js/load_clustergram.js" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/js/load_clustergram.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/js/selection.js" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/js/selection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/json/mult_view.json" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/json/mult_view.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobinput/static/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobinput/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/heatmap.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/heatmap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/jobsubmit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/jobsubmit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/command_line.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/conf_utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/file_utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/load/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/load/add_genes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/load/add_rsids.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/load/augment_phenos.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/load/bgzip_phenos.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/load/cffi/ffibuilder.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/load/cffi/x.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/load/detect_ref.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/load/download_genes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/load/download_rsids.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/load/gather_pvalues_for_each_gene.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/load/load_utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/load/make_gene_aliases_trie.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/load/make_tries.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/load/manhattan.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/load/matrix.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/load/parse_input_files.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/load/pheno_correlation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/load/phenolist/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/load/phenotypes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/load/process_assoc_files.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/load/qq.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/load/read_input_file.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/load/sites.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/load/slurm-parse.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/load/top_hits.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/load/top_loci.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/load/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/auth.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/autocomplete.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/run.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/server.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/server_utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/static/common.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/static/common.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/static/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/static/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/static/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/static/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/static/gene.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/static/pheno.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/static/phenotypes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/static/region.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/static/region.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/static/top_hits.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/static/variant.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/static/vendor/stream_table-1.1.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/templates/about.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/templates/about/content.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/templates/error.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/templates/gene.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/templates/index/below-h1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/templates/index/below-query.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/templates/index/h1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/templates/layout.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/templates/pheno.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/templates/pheno/h1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/templates/phenotypes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/templates/region.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/templates/region/h1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/templates/title.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/templates/top_hits.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/serve/templates/variant.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/version.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pheweb/weetabix.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../robinhoodTweeterParse/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../robinhoodTweeterParse/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../robinhoodTweeterParse/Tweetobj.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../robinhoodTweeterParse/templates/execthetawarriortweets.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../robinhoodTweeterParse/templates/executeorder.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../robinhoodTweeterParse/templates/sellorder.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../robinhoodTweeterParse/templates/thetawarriortweets.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../robinhoodTweeterParse/templates/tweets.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../setup.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../setup.py" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/jobinput/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="216" lean-forward="true" selection-start-line="216" selection-end-line="216" />
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jobinput/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="529">
+              <caret line="26" column="80" selection-start-line="26" selection-start-column="80" selection-end-line="26" selection-end-column="80" />
+              <folding>
+                <element signature="e#636#664#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/runclassifier.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2277">
+              <caret line="161" column="9" selection-start-line="160" selection-start-column="13" selection-end-line="161" selection-end-column="9" />
+              <folding>
+                <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/js/load_clustergram.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2093">
+              <caret line="93" column="1" selection-start-line="93" selection-start-column="1" selection-end-line="93" selection-end-column="1" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/js/clustergrammer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/js/Enrichrgram.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/js/hzome_functions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1725">
+              <caret line="75" column="30" selection-start-line="75" selection-start-column="30" selection-end-line="75" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="12" column="70" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="70" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#a#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#ul#0;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#1;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#td#0;n#tr#2;n#table#0;n#div#1;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#3;n#table#0;n#div#1;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/clustergramheatmap.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1542">
+              <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/heatmap.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-657">
+              <caret line="72" column="31" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>dir_store_data</find>
+      <find>data_loading</find>
+      <find>FF_df.csv</find>
+      <find>.csv</find>
+      <find>getwd()</find>
+      <find>options_a</find>
+      <find>selection.</find>
+      <find>.navbar-brand</find>
+      <find>selectcpm</find>
+      <find>expandAdvancedOptions</find>
+      <find>aht_btn</find>
+      <find>pcasel</find>
+      <find>prepro1</find>
+      <find>signupForm</find>
+      <find>btnClick</find>
+      <find>make_admin</find>
+      <find>p1</find>
+      <find>logcpm</find>
+      <find>read</find>
+      <find>script</find>
+      <find>CSRF_TOKEN</find>
+      <find>uploadfile</find>
+      <find>myfile</find>
+      <find>get</find>
+      <find>content</find>
+      <find>block</find>
+      <find>form</find>
+      <find>csrf</find>
+      <find>fieldset</find>
+      <find>0</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/jobinput/admin.py" />
+        <option value="$PROJECT_DIR$/jobinput/static/main.css" />
+        <option value="$PROJECT_DIR$/jobinput/forms.py" />
+        <option value="$PROJECT_DIR$/jobinput/static/jobinput/js/Enrichrgram.js" />
+        <option value="$PROJECT_DIR$/jobinput/static/jobinput/json/mult_view.json" />
+        <option value="$PROJECT_DIR$/templates/heatmap.html" />
+        <option value="$PROJECT_DIR$/jobinput/static/jobinput/js/d3.js" />
+        <option value="$PROJECT_DIR$/tumourclass/settings.py" />
+        <option value="$PROJECT_DIR$/jobinput/models.py" />
+        <option value="$PROJECT_DIR$/manage.py" />
+        <option value="$PROJECT_DIR$/jobinput/static/jobinput/python_script/IMU_KRT_classifier.py" />
+        <option value="$PROJECT_DIR$/jobinput/static/jobinput/R_script/preprocessing.R" />
+        <option value="$PROJECT_DIR$/templates/jobsubmit.html" />
+        <option value="$PROJECT_DIR$/tumourclass/urls.py" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/jobinput/static/jobinput/js/selection.js" />
+        <option value="$PROJECT_DIR$/jobinput/static/jobinput/css/custom.css" />
+        <option value="$PROJECT_DIR$/jobinput/static/jobinput/main.css" />
+        <option value="$PROJECT_DIR$/templates/home_backup.html" />
+        <option value="$PROJECT_DIR$/templates/home.html" />
+        <option value="$PROJECT_DIR$/jobinput/static/jobinput/js/mult_view2.json" />
+        <option value="$PROJECT_DIR$/templates/runclassifier_backup.html" />
+        <option value="$PROJECT_DIR$/templates/runclassifier.html" />
+        <option value="$PROJECT_DIR$/jobinput/urls.py" />
+        <option value="$PROJECT_DIR$/jobinput/views.py" />
+        <option value="$PROJECT_DIR$/jobinput/static/jobinput/js/load_clustergram.js" />
+        <option value="$PROJECT_DIR$/jobinput/static/jobinput/js/clustergrammer.js" />
+        <option value="$PROJECT_DIR$/jobinput/static/jobinput/js/hzome_functions.js" />
+        <option value="$PROJECT_DIR$/templates/clustergramheatmap.html" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="35" />
+    <option name="y" value="23" />
+    <option name="width" value="1885" />
+    <option name="height" value="1057" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="tumourclass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tumourclass" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tumourclass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tumourclass" type="462c0819:PsiDirectoryNode" />
+              <item name="jobinput" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tumourclass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tumourclass" type="462c0819:PsiDirectoryNode" />
+              <item name="jobinput" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tumourclass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tumourclass" type="462c0819:PsiDirectoryNode" />
+              <item name="jobinput" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="jobinput" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tumourclass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tumourclass" type="462c0819:PsiDirectoryNode" />
+              <item name="jobinput" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="jobinput" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tumourclass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tumourclass" type="462c0819:PsiDirectoryNode" />
+              <item name="jobinput" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="jobinput" type="462c0819:PsiDirectoryNode" />
+              <item name="R_script" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tumourclass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tumourclass" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tumourclass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tumourclass" type="462c0819:PsiDirectoryNode" />
+              <item name="tumourclass" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.23125" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates" />
+      <recent name="$PROJECT_DIR$/jobinput/static/jobinput/R_script" />
+      <recent name="$PROJECT_DIR$/jobinput/static/jobinput/images" />
+      <recent name="$PROJECT_DIR$/jobinput/static/jobinput/python_script" />
+      <recent name="$PROJECT_DIR$/jobinput/static/jobinput/js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/jobinput/static/jobinput" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Python.DjangoServer" factoryName="Django server" nameIsGenerated="true">
+      <module name="tumourclass" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/../venv/bin/python3.10" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="http://127.0.0.1:8000/" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7d0eb3a4-ee4e-457d-9617-4ccbadbd416f" name="Default Changelist" comment="" />
+      <created>1645650250961</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1645650250961</updated>
+      <workItem from="1645650252487" duration="1479000" />
+      <workItem from="1645895679066" duration="32729000" />
+      <workItem from="1647375310844" duration="299000" />
+      <workItem from="1647547489776" duration="3749000" />
+      <workItem from="1647630033773" duration="194000" />
+      <workItem from="1648136624870" duration="250000" />
+      <workItem from="1648687622569" duration="131000" />
+      <workItem from="1649173948271" duration="1059000" />
+      <workItem from="1649256164702" duration="240000" />
+      <workItem from="1649708613694" duration="504000" />
+      <workItem from="1650568170470" duration="1885000" />
+      <workItem from="1650727439849" duration="8075000" />
+      <workItem from="1650895715601" duration="10891000" />
+      <workItem from="1651165046905" duration="428000" />
+      <workItem from="1651777199812" duration="10237000" />
+      <workItem from="1653400990243" duration="13000" />
+      <workItem from="1657120012057" duration="2694000" />
+      <workItem from="1657161952203" duration="7007000" />
+      <workItem from="1657729192570" duration="255000" />
+      <workItem from="1658325309057" duration="348000" />
+      <workItem from="1658413973989" duration="3303000" />
+      <workItem from="1659452528847" duration="372000" />
+      <workItem from="1659579368327" duration="8022000" />
+      <workItem from="1659904507853" duration="596000" />
+      <workItem from="1659976740009" duration="183000" />
+      <workItem from="1660156507092" duration="9460000" />
+      <workItem from="1660679684361" duration="805000" />
+      <workItem from="1660757024892" duration="6286000" />
+      <workItem from="1661185893058" duration="8810000" />
+      <workItem from="1661265076260" duration="6766000" />
+      <workItem from="1661721152455" duration="7365000" />
+      <workItem from="1662431371332" duration="1514000" />
+      <workItem from="1662996685540" duration="876000" />
+      <workItem from="1663088087939" duration="4704000" />
+      <workItem from="1664904426608" duration="994000" />
+      <workItem from="1665509838550" duration="801000" />
+      <workItem from="1665585108624" duration="701000" />
+      <workItem from="1666112645923" duration="970000" />
+      <workItem from="1666204764994" duration="2083000" />
+      <workItem from="1666714984801" duration="4463000" />
+      <workItem from="1666881254317" duration="437000" />
+      <workItem from="1668453058636" duration="9646000" />
+      <workItem from="1668610755972" duration="347000" />
+      <workItem from="1668668700087" duration="69000" />
+      <workItem from="1669668861464" duration="3338000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="165378000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="35" y="23" width="1885" height="1057" extended-state="0" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2795756" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3294979" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.43717548" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Maven" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="SciView" order="8" weight="0.3297619" />
+      <window_info anchor="right" id="Database" order="9" />
+      <window_info anchor="right" id="R Packages" order="10" />
+      <window_info anchor="right" id="R Graphics" order="11" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/manage.py</url>
+          <line>2</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/jobinput/static/jobinput/js/selection.js</url>
+          <line>82</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/db.sqlite3">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/main.css" />
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/js/jquery-1.11.2.min.js" />
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/js/load_multiple_clustergrams.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/json/mult_view.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229126">
+          <caret line="9962" column="17" lean-forward="true" selection-start-line="9962" selection-start-column="17" selection-end-line="9962" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/js/load_scrolling_tour.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/js/d3.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="698">
+          <caret line="9539" column="4" selection-start-line="9539" selection-start-column="4" selection-end-line="9539" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../venv/lib/python3.10/site-packages/django/utils/datastructures.py" />
+    <entry file="file://$PROJECT_DIR$/../venv/lib/python3.10/site-packages/django/template/loader.py" />
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/python_script/IMU_KRT_classifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/css/font-awesome.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/css/custom_scrolling.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tumourclass/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tumourclass/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+          <folding>
+            <element signature="e#635#667#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="6" column="25" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/js/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/jobsubmit_old.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-571">
+          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/jobsubmit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1104">
+          <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#84#93#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tumourclass/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3243">
+          <caret line="142" column="19" selection-start-line="142" selection-start-column="14" selection-end-line="142" selection-end-column="19" />
+          <folding>
+            <element signature="e#312#336#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1334">
+          <caret line="58" column="26" selection-start-line="22" selection-start-column="4" selection-end-line="58" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#a#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home_backup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3864">
+          <caret line="172" column="27" selection-end-line="346" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#a#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#ul#0;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3289">
+          <caret line="143" selection-start-line="143" selection-end-line="143" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5819">
+          <caret line="253" selection-start-line="253" selection-end-line="253" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/js/mult_view.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-49565">
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/js/load_local_network.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/js/mult_view2.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/js/underscore-min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/js/scroll_section_functions.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/js/selection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="644">
+          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+          <folding>
+            <element signature="n#!!block;n#selectFFmethod#0" />
+            <element signature="n#!!block;n#expandAdvancedOptions#0" />
+            <element signature="n#!!block;n#closeExp#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/R_script/preprocessing.R">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="188" selection-start-line="188" selection-end-line="188" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/js/send_to_Enrichr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="26" column="80" selection-start-line="26" selection-start-column="80" selection-end-line="26" selection-end-column="80" />
+          <folding>
+            <element signature="e#636#664#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/runclassifier.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2277">
+          <caret line="161" column="9" selection-start-line="160" selection-start-column="13" selection-end-line="161" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/js/load_clustergram.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2093">
+          <caret line="93" column="1" selection-start-line="93" selection-start-column="1" selection-end-line="93" selection-end-column="1" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/js/clustergrammer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/js/Enrichrgram.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/js/hzome_functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1725">
+          <caret line="75" column="30" selection-start-line="75" selection-start-column="30" selection-end-line="75" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="70" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="70" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#a#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#ul#0;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#1;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#td#0;n#tr#2;n#table#0;n#div#1;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#3;n#table#0;n#div#1;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/heatmap.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-657">
+          <caret line="72" column="31" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/clustergramheatmap.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1542">
+          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="216" lean-forward="true" selection-start-line="216" selection-end-line="216" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>Python 3.1 (venv)</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>tumourclass</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>Python 3.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

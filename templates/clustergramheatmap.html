@@ -1,0 +1,126 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<link rel="shortcut icon" href="img/graham_cracker.ico"  type="image/x-icon">
+
+<link rel="stylesheet" href="{% static 'jobinput/css/font-awesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'jobinput/css/bootstrap.css' %}">
+<link rel="stylesheet" href="{% static 'jobinput/css/custom.css' %} ">
+
+<script src="{% static 'jobinput/js/iframeResizer.min.js' %} "></script>
+
+
+
+
+
+<script src="{% static 'jobinput/js/d3.js' %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script src="{% static 'jobinput/js/underscore-min.js' %}"></script>
+<script src="{% static 'jobinput/js/bootstrap.js' %}"></script>
+
+<script src="{% static 'jobinput/js/clustergrammer.js' %}"></script>
+<script src="{% static 'jobinput/js/Enrichrgram.js' %}"></script>
+<script src="{% static 'jobinput/js/hzome_functions.js' %}"></script>
+<script src="{% static 'jobinput/js/send_to_Enrichr.js' %}"></script>
+
+
+
+<script>
+    iFrameResize({ log: true }, '#myIframe')
+</script>
+<style>
+    body {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    /* iframe's parent node */
+    div#root {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* iframe itself */
+    div#root > iframe {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    iframe {
+        width: 1px;
+        min-width: 100%;
+    }
+
+</style>
+
+
+
+<head>
+    <title>iframe Test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<div id="root" class="container-sm">
+    <iframe id="myIframe" src="http://maayanlab.cloud/clustergrammer/viz/6373c14738a7ff000ed14ef7/matrix_tab.txt" width="70%" scrolling="yes" ></iframe>
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+
+
+        <h3>Heatmap</h3>
+        <title>Clustergrammer.js</title>
+
+    <div id='container-id-1'>
+        <h1 class='wait_message'>Please wait ...</h1>
+    </div>
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+    {% endblock content %}
+
+
+
+
+
+
+
+

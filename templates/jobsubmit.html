@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+
+
+
+
+<div class="form-group text-justify p-5">
+    <form action="runclassifier" method="post" enctype="multipart/form-data">
+
+        <input type="hidden" id="imageid" name="imageid" value="2">
+        <div class="form-group row">
+            <a href="{% url 'download_file' imageid=2 %}" type="button">Download Matrix</a>
+
+        </div>
+        <div class="form-group row">
+            <label for="pcasel" class="col-md-3 col-sm-2 col-form-label">Machine learning Models:</label>
+            <div  id="pcasel" class="col-sm-10 col-md-9">
+
+                <ul>
+                    <li><input class="form-check-input" type="checkbox" name="pcasel" id="pcasel"  class="formObject" value="1"  checked="checked" />
+                        <span class="formText">random forest </span><br />
+                    <li><input class="form-check-input" type="checkbox" name="pcasel" id="pcasel" class="formObject" value="0">
+                    <span class="formText">k-nearest neighbors</span><br />
+                    <li><input class="form-check-input" type="checkbox" name="pcasel" id="pcasel" class="formObject" value="0">
+                        <span class="formText">Gaussian Naïve Bayes</span><br />
+                    <li><input class="form-check-input" type="checkbox" name="pcasel" id="pcasel" class="formObject" value="0">
+                        <span class="formText">Support vector machine</span><br />
+                    <li><input class="form-check-input" type="checkbox" name="pcasel" id="pcasel" class="formObject" value="0">
+                        <span class="formText">elastic net regression</span><br />
+                </ul>
+
+            </div>
+
+                <label for="geneset" class="col-md-3 col-sm-2 col-form-label">Gene set use:</label>
+                <div  id="geneset" class="col-sm-10 col-md-9">
+
+                    <ul>
+                        <li><input class="form-check-input" type="checkbox" name="pcasel" id="geneset"  class="formObject" value="1"  checked="checked" />
+                            <span class="formText">7 genes</span><br />
+                        <li><input class="form-check-input" type="checkbox" name="pcasel" id="geneset" class="formObject" value="0">
+                        <span class="formText">168 genes</span><br />
+                        <li><input class="form-check-input" type="checkbox" name="pcasel" id="geneset" class="formObject" value="0">
+                            <span class="formText">960 genes</span><br />
+
+                    </ul>
+
+                </div>
+            <label for="geneset" class="col-md-3 col-sm-2 col-form-label">PCA analysis:</label>
+            <div  id="pcscel" class="col-sm-10 col-md-9">
+
+                <ul>
+                    <li><input class="form-check-input" type="checkbox" name="pcasel" id="pcacel"  class="formObject" value="1"  checked="checked" />
+                        <span class="formText">yes</span><br />
+                    <li><input class="form-check-input" type="checkbox" name="pcasel" id="pcasel" class="formObject" value="0">
+                        <span class="formText">no</span><br />
+
+                </ul>
+
+            </div>
+
+
+
+
+            <div  id="pcscel" class="col-sm-10 col-md-9">
+
+
+        <input type="submit" value="Run Analysis">
+            </div>
+        {% csrf_token %}
+    </form>
+</div>
+
+
+
+
+    {% endblock content %}
