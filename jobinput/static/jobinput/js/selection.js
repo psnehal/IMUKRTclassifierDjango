@@ -28,7 +28,7 @@ function selectcpm(id)
         +'<div  id="test1" class="col-sm-10 col-md-9">'
         +'<table>'
             +'<tr>'
-            +'<tr><td><input id="test2" type="file" name="test2meta" size="30" class="formObject"></td></tr>'
+            +'<tr><td><input id="batchfile" type="file" name="batchfile" size="30" class="formObject"></td></tr>'
             +'</table></div></div>';
 
 

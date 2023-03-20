@@ -26045,7 +26045,7 @@ var Clustergrammer =
                                                 dispatch(filesaver, "writeend", event);
                                             };
                                             writer.onerror = function () {
-                                                var error = writer.error;
+                                                var error = writer.DisplayError;
                                                 if (error.code !== error.ABORT_ERR) {
                                                     fs_error();
                                                 }
@@ -28342,7 +28342,7 @@ var Clustergrammer =
                         // TODO: This could benefit from caching.
                         var oReq = new XMLHttpRequest();
                         oReq.addEventListener('load', fontLoaded);
-                        oReq.addEventListener('error', transferFailed);
+                        oReq.addEventListener('DisplayError.html', transferFailed);
                         oReq.addEventListener('abort', transferFailed);
                         oReq.open('GET', font.url);
                         oReq.responseType = 'arraybuffer';

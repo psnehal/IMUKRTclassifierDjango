@@ -26,8 +26,11 @@ urlpatterns = [
     path('runclassifier',views.runclassifier, name='runclassifier'),
     path('clustergramheatmap',views.clustergramheatmap, name='clustergramheatmap'),
     path('heatmap', views.heatmap, name='heatmap'),
+    path('about', views.about, name='about'),
     path('downloadfile/<str:imageid>/', views.download_file, name='download_file'),
+    path('downloadfile/', views.download_file, name='download_file'),
     path('ajax-posting/', ajax_posting, name='ajax_posting'),
+    path('DisplayError/', ajax_posting, name='DisplayError'),
 
 
 

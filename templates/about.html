@@ -1,0 +1,119 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="{% static 'jobinput/main.css' %}">
+
+    <!-- Bootstrap CSS -->
+    <script src="{% static 'jobinput/js/jquery-3.5.1.js' %}"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'jobinput/main.css' %}">
+    <script src="{% static 'jobinput/js/selection.js' %}"></script>
+
+
+
+
+
+    <title> IMU/KRT tumor classiMolecular Tumor Subtype Classification Tool for HPV-associated Head and Neck Cancer Samples</title>
+</head>
+<body>
+<div class="navbar navbar-static-top pb-2" role="navigation">
+    <div class="navbar-header mb-4 flex-wrap: wrap;">
+
+        <a class="navbar-brand mx-auto mb-1 text-wrap" href="/" style="text-decoration:none;color: white; font-size: xx-large">Molecular Tumor Subtype Classification Tool for HPV-associated Head and Neck Cancer Samples
+        </a>
+        <a class="navbar-brand mx-auto" href="/#">
+            <a class="navbar-center" href="https://sph.umich.edu/precision-health-data-science/" target="_blank"><img src="" alt="" style="height:auto; width: 12em;" /></a>
+
+        </a>
+
+    </div>
+    <br/>
+    <br/>
+
+
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-item nav-link"  href="/about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-item nav-link"  href="/MGI-freeze3/top_hits">Contacts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-item nav-link"  href="/MGI-freeze3/about">About</a>
+            </li>
+
+
+        </ul>
+    </div>
+</nav>
+
+<div class="form-group text-justify p-5">
+<span class="text">The five ML methods used are random forest, k-nearest neighbors,
+      Gaussian Naïve Bayes, support vector machine, and elastic net logistic regression. Each can be
+       performed with 3 different gene sets as features containing 7, 168, and 960 genes, respectively.
+       By default, all ML methods and the 2 larger gene sets are used. The 7 gene set is only recommended
+       if the full transcriptome is not available.
+       </br></br>Batch effects, if present, are adjusted using ComBat. The classifier has been validated using RNA-seq
+       data from a mixture of fresh frozen and FFPE tumor samples. Compared to the original clustering-based
+       subtype definition, it correctly classifies all original 18 UM and 66 TCGA samples tested.
+    </br></br>More detailed methods are available here.</span>
+</div>
+
+{% block content %}
+
+
+
+
+
+</div>
+
+
+
+
+<br/> <br/>
+
+
+
+{% csrf_token %}
+<span class="col-md-1 col-md-offset-2 text-center"></span>
+<div class="col-md-8">
+
+
+</div>
+
+
+
+</div>
+
+</div>
+
+
+
+</fieldset>
+
+
+
+</div>
+
+{% endblock %}
+
+</body>
+</html>
+
+
+
+
+
+
+

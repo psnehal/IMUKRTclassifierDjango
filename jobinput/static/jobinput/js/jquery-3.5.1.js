@@ -9649,7 +9649,7 @@ jQuery.extend( {
 		// Install callbacks on deferreds
 		completeDeferred.add( s.complete );
 		jqXHR.done( s.success );
-		jqXHR.fail( s.error );
+		jqXHR.fail( s.DisplayError );
 
 		// Get transport
 		transport = inspectPrefiltersOrTransports( transports, s, options, jqXHR );
@@ -9770,7 +9770,7 @@ jQuery.extend( {
 				// Extract error from statusText and normalize for non-aborts
 				error = statusText;
 				if ( status || !statusText ) {
-					statusText = "error";
+					statusText = "DisplayError.html";
 					if ( status < 0 ) {
 						status = 0;
 					}
@@ -10028,13 +10028,13 @@ jQuery.ajaxTransport( function( options ) {
 
 							if ( type === "abort" ) {
 								xhr.abort();
-							} else if ( type === "error" ) {
+							} else if ( type === "DisplayError.html" ) {
 
 								// Support: IE <=9 only
 								// On a manual native abort, IE9 throws
 								// errors on any property access that is not readyState
 								if ( typeof xhr.status !== "number" ) {
-									complete( 0, "error" );
+									complete( 0, "DisplayError.html" );
 								} else {
 									complete(
 
@@ -10064,7 +10064,7 @@ jQuery.ajaxTransport( function( options ) {
 
 				// Listen to events
 				xhr.onload = callback();
-				errorCallback = xhr.onerror = xhr.ontimeout = callback( "error" );
+				errorCallback = xhr.onerror = xhr.ontimeout = callback( "DisplayError.html" );
 
 				// Support: IE 9 only
 				// Use onreadystatechange to replace onabort
@@ -10167,7 +10167,7 @@ jQuery.ajaxTransport( "script", function( s ) {
 						script.remove();
 						callback = null;
 						if ( evt ) {
-							complete( evt.type === "error" ? 404 : 200, evt.type );
+							complete( evt.type === "DisplayError.html" ? 404 : 200, evt.type );
 						}
 					} );
 

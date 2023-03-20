@@ -1931,7 +1931,7 @@
     };
   }
   function d3_xhr(url, mimeType, response, callback) {
-    var xhr = {}, dispatch = d3.dispatch("beforesend", "progress", "load", "error"), headers = {}, request = new XMLHttpRequest(), responseType = null;
+    var xhr = {}, dispatch = d3.dispatch("beforesend", "progress", "load", "DisplayError.html"), headers = {}, request = new XMLHttpRequest(), responseType = null;
     if (this.XDomainRequest && !("withCredentials" in request) && /^(http(s)?:)?\/\//.test(url)) request = new XDomainRequest();
     "onload" in request ? request.onload = request.onerror = respond : request.onreadystatechange = function() {
       request.readyState > 3 && respond();
@@ -1942,12 +1942,12 @@
         try {
           result = response.call(xhr, request);
         } catch (e) {
-          dispatch.error.call(xhr, e);
+          dispatch.DisplayError.call(xhr, e);
           return;
         }
         dispatch.load.call(xhr, result);
       } else {
-        dispatch.error.call(xhr, request);
+        dispatch.DisplayError.call(xhr, request);
       }
     }
     request.onprogress = function(event) {
@@ -1991,7 +1991,7 @@
       if (request.setRequestHeader) for (var name in headers) request.setRequestHeader(name, headers[name]);
       if (mimeType != null && request.overrideMimeType) request.overrideMimeType(mimeType);
       if (responseType != null) request.responseType = responseType;
-      if (callback != null) xhr.on("error", callback).on("load", function(request) {
+      if (callback != null) xhr.on("DisplayError.html", callback).on("load", function(request) {
         callback(null, request);
       });
       dispatch.beforesend.call(xhr, request);
