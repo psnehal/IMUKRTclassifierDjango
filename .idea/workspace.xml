@@ -4418,19 +4418,11 @@
       <change afterPath="$PROJECT_DIR$/../../EncoreOriginal/venv/lib/python3.8/site-packages/werkzeug/wrappers/user_agent.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../EncoreOriginal/venv/lib/python3.8/site-packages/werkzeug/wsgi.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../EncoreOriginal/venv/pyvenv.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jobinput/python_script/.Rhistory" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jobinput/python_script/IMU_KRT_classifier.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jobinput/python_script/list_of_gene_sets_used.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jobinput/python_script/list_of_model_rf_knn_gnb_svm_elastic.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jobinput/python_script/list_of_pca.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jobinput/static/jobinput/R_script/FF_df_symbol_corrected.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jobinput/static/jobinput/R_script/NAPCA_related.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jobinput/static/jobinput/R_script/gene_sets.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jobinput/static/jobinput/R_script/heatmap_data1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jobinput/static/jobinput/images/figure1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jobinput/static/jobinput/python_script/list_of_pca.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jobinput/static/jobinput/R_script/preprocessing1.R" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jobinput/static/jobinput/R_script/preprocessing2.R" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jobinput/static/jobinput/python_script_dlt/list_of_gene_sets_used.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jobinput/static/jobinput/python_script_dlt/list_of_model_rf_knn_gnb_svm_elastic.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jobinput/static/jobinput/python_script_dlt/list_of_pca.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../CoronoBramarsProject/covidproject/covidproject/src/main/groovy/covidproject/org/DataValidator.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LRPath/robinhood/buttons.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../LRPath/robinhood/buttons.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LRPath/robinhood/inputsentence.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../LRPath/robinhood/inputsentence.py" afterDir="false" />
@@ -4438,34 +4430,38 @@
       <change beforePath="$PROJECT_DIR$/../../LRPath/robinhood/parse_.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../LRPath/robinhood/parse_.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LRPath/robinhood/thetawarrior.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../LRPath/robinhood/thetawarrior.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LRPath/robinhood/tweeterParse.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../LRPath/robinhood/tweeterParse.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.Rhistory" beforeDir="false" afterPath="$PROJECT_DIR$/.Rhistory" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/snehalpatil.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/snehalpatil.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jobinput/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/R_script/.Rapp.history" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobinput/python_script/IMU_KRT_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/python_script/IMU_KRT_classifier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobinput/python_script/list_of_gene_sets_used.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/python_script/list_of_gene_sets_used.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobinput/python_script/list_of_model_rf_knn_gnb_svm_elastic.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/python_script/list_of_model_rf_knn_gnb_svm_elastic.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobinput/python_script/list_of_pca.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/python_script/list_of_pca.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/R_script/FF_df.csv" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/R_script/FF_df.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/R_script/FF_df_cpm.csv" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/R_script/FF_df_cpm.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/R_script/FF_df_symbol_corrected.csv" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/R_script/FF_df_symbol_corrected.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/R_script/FF_meta.csv" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/R_script/FF_meta.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/R_script/IMU_KRT_not_sig_genes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/R_script/IMU_KRT_not_sig_genes.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/R_script/IMU_KRT_not_sig_genes_all.csv" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/R_script/IMU_KRT_not_sig_genes_all.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/R_script/NAPCA_related.json" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/R_script/NAPCA_related.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/R_script/gene_sets.json" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/R_script/gene_sets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/R_script/preprocessing.R" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/R_script/preprocessing.R" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/images/PCA_classification.png" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/images/PCA_classification.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/images/heatmap.png" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/images/heatmap.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/images/output1.png" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/images/output1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/images/output2.png" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/images/output2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/js/clustergrammer.js" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/js/clustergrammer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/images/figure2.png" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/images/figure2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/js/d3.js" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/js/d3.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/js/hzome_functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/js/hzome_functions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/js/jquery-1.11.2.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/js/jquery-3.5.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/js/jquery-3.5.1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/js/load_clustergram.js" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/js/load_clustergram.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/js/selection.js" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/js/selection.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/json/mult_view.json" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/json/mult_view.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/python_script/.Rhistory" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/python_script/IMU_KRT_classifier.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/python_script/list_of_gene_sets_used.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/python_script/list_of_gene_sets_used.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/python_script/list_of_model_rf_knn_gnb_svm_elastic.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/python_script/list_of_model_rf_knn_gnb_svm_elastic.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/python_script/IMU_KRT_classifier_old.py" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/python_script_dlt/IMU_KRT_classifier_old.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/python_script/list_of_gene_sets_used.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/python_script/list_of_model_rf_knn_gnb_svm_elastic.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/python_script/list_of_pca.pkl" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/jobinput/static/main.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/jobinput/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jobinput/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/clustergramheatmap.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clustergramheatmap.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/heatmap.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/heatmap.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/jobsubmit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/jobsubmit.html" afterDir="false" />
@@ -4572,8 +4568,53 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jobinput/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="17" column="38" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="38" />
+            <state relative-caret-position="315">
+              <caret line="56" column="61" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="61" />
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/runclassifier.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="132" column="26" selection-start-line="132" selection-start-column="26" selection-end-line="132" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/heatmap.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1232">
+              <caret line="120" selection-start-line="120" selection-end-line="120" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/js/load_clustergram.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="46">
+              <caret line="4" column="21" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="21" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/python_script_dlt/IMU_KRT_classifier.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3404">
+              <caret line="161" column="45" selection-start-line="161" selection-start-column="45" selection-end-line="161" selection-end-column="45" />
+              <folding>
+                <element signature="e#8433#15450#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -4581,41 +4622,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jobinput/python_script/IMU_KRT_classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7015">
-              <caret line="318" column="8" selection-start-line="318" selection-start-column="8" selection-end-line="318" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tumourclass/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="27" selection-start-column="27" selection-end-column="27" />
-              <folding>
-                <element signature="e#635#667#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/DisplayError.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1449">
-              <caret line="63" column="72" selection-start-line="63" selection-start-column="72" selection-end-line="63" selection-end-column="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jobinput/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="667">
-              <caret line="32" column="58" selection-start-line="32" selection-start-column="58" selection-end-line="32" selection-end-column="58" />
-              <folding>
-                <element signature="e#636#664#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="7866">
+              <caret line="355" column="16" selection-start-line="355" selection-start-column="16" selection-end-line="355" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -4623,8 +4631,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tumourclass/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3174">
-              <caret line="139" column="12" selection-start-line="139" selection-end-line="139" selection-end-column="12" />
+            <state relative-caret-position="3197">
+              <caret line="140" column="17" selection-start-line="140" selection-end-line="140" selection-end-column="17" />
               <folding>
                 <element signature="e#312#336#0" expanded="true" />
               </folding>
@@ -4632,14 +4640,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="68" selection-start-line="68" selection-end-line="68" />
+            <state relative-caret-position="5796">
+              <caret line="252" column="51" selection-start-line="252" selection-start-column="51" selection-end-line="252" selection-end-column="51" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#a#0;n#a#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#figcaption#0;n#figure#0;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#div#0;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#div#0;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#div#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
@@ -4648,19 +4662,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/images/figure2.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/js/selection.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/about.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="30" column="42" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="42" />
-              <folding>
-                <element signature="n#!!block;n#closeExp#0" />
-              </folding>
+            <state relative-caret-position="280">
+              <caret line="14" column="68" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -4677,36 +4683,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>SECRET_KEY</find>
-      <find>{% csrf_token %}</find>
-      <find>json</find>
-      <find>download_file</find>
-      <find>uuid</find>
-      <find>gene_sets.json</find>
-      <find>/list_of_model_rf_knn_gnb_svm_elastic.pkl</find>
-      <find>dir_store_files</find>
-      <find>FF_df_symbol_corrected.csv</find>
-      <find>.csv</find>
-      <find>.json</find>
-      <find>result.</find>
-      <find>PROJEC</find>
-      <find>outputfile</find>
-      <find>outputfil</find>
-      <find>data_loading</find>
-      <find>the following arguments are required</find>
-      <find>predict_array</find>
-      <find>heatmap</find>
-      <find>runfile</find>
-      <find>submit</find>
-      <find>print</find>
-      <find>batchfilestatus</find>
-      <find>batcheff</find>
+      <find>figcaption</find>
       <find>includeFF18ornot</find>
-      <find>selectcpm</find>
-      <find>error</find>
+      <find>preloads</find>
+      <find>pcasel</find>
+      <find>batch_effect_file</find>
+      <find>batchfilestatus</find>
+      <find>Upload data for</find>
+      <find>batcheff</find>
+      <find>uploaded_file_urlb</find>
       <find>folder</find>
-      <find>run</find>
-      <find>runclassifier</find>
+      <find>outputfile</find>
+      <find>download_file</find>
+      <find>batchremovalornot</find>
+      <find>foldername</find>
+      <find>rscriptfilepath</find>
+      <find>file_save_path</find>
+      <find>runStep2</find>
+      <find>pcadata</find>
+      <find>runcl</find>
+      <find>output_dir</find>
+      <find>pyfilepath</find>
+      <find>heatmap for clustering result.png'</find>
+      <find>folder_save_path</find>
+      <find>runfile</find>
+      <find>container-id-1</find>
+      <find>clustergrammer.js.map</find>
+      <find>ini_hzome</find>
+      <find>heatmap</find>
+      <find>jquery-1.11.2.min.js</find>
+      <find>runprestep2</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -4720,7 +4726,6 @@
         <option value="$PROJECT_DIR$/jobinput/forms.py" />
         <option value="$PROJECT_DIR$/jobinput/static/jobinput/js/Enrichrgram.js" />
         <option value="$PROJECT_DIR$/jobinput/static/jobinput/json/mult_view.json" />
-        <option value="$PROJECT_DIR$/templates/heatmap.html" />
         <option value="$PROJECT_DIR$/jobinput/static/jobinput/js/d3.js" />
         <option value="$PROJECT_DIR$/jobinput/models.py" />
         <option value="$PROJECT_DIR$/manage.py" />
@@ -4731,29 +4736,30 @@
         <option value="$PROJECT_DIR$/templates/home_backup.html" />
         <option value="$PROJECT_DIR$/jobinput/static/jobinput/js/mult_view2.json" />
         <option value="$PROJECT_DIR$/templates/runclassifier_backup.html" />
-        <option value="$PROJECT_DIR$/jobinput/static/jobinput/js/load_clustergram.js" />
         <option value="$PROJECT_DIR$/jobinput/static/jobinput/js/clustergrammer.js" />
         <option value="$PROJECT_DIR$/jobinput/static/jobinput/js/hzome_functions.js" />
         <option value="$PROJECT_DIR$/templates/clustergramheatmap.html" />
         <option value="$PROJECT_DIR$/templates/error.html" />
-        <option value="$PROJECT_DIR$/jobinput/static/jobinput/main.css" />
-        <option value="$PROJECT_DIR$/jobinput/static/jobinput/python_script/IMU_KRT_classifier.py" />
-        <option value="$PROJECT_DIR$/templates/runclassifier.html" />
         <option value="$PROJECT_DIR$/jobinput/IMU_KRT_classifier.py" />
         <option value="$PROJECT_DIR$/templates/about.html" />
-        <option value="$PROJECT_DIR$/jobinput/static/jobinput/R_script/preprocessing.R" />
-        <option value="$PROJECT_DIR$/tumourclass/settings.py" />
         <option value="$PROJECT_DIR$/jobinput/static/jobinput/js/selection.js" />
-        <option value="$PROJECT_DIR$/jobinput/urls.py" />
-        <option value="$PROJECT_DIR$/jobinput/views.py" />
         <option value="$PROJECT_DIR$/jobinput/python_script/IMU_KRT_classifier.py" />
+        <option value="$PROJECT_DIR$/jobinput/static/jobinput/main.css" />
+        <option value="$PROJECT_DIR$/jobinput/static/jobinput/R_script/preprocessing.R" />
+        <option value="$PROJECT_DIR$/jobinput/urls.py" />
+        <option value="$PROJECT_DIR$/jobinput/static/jobinput/python_script/IMU_KRT_classifier.py" />
         <option value="$PROJECT_DIR$/templates/home.html" />
+        <option value="$PROJECT_DIR$/tumourclass/settings.py" />
+        <option value="$PROJECT_DIR$/templates/runclassifier.html" />
+        <option value="$PROJECT_DIR$/jobinput/static/jobinput/js/load_clustergram.js" />
+        <option value="$PROJECT_DIR$/jobinput/views.py" />
+        <option value="$PROJECT_DIR$/templates/heatmap.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="209" />
-    <option name="y" value="23" />
+    <option name="x" value="-1802" />
+    <option name="y" value="3" />
     <option name="width" value="1644" />
     <option name="height" value="1027" />
   </component>
@@ -4763,6 +4769,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -4800,7 +4807,7 @@
               <item name="jobinput" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="jobinput" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tumourclass" type="b2602c69:ProjectViewProjectNode" />
@@ -4825,7 +4832,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -4834,7 +4840,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/jobinput/static/jobinput/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/jobinput/python_script_delete" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -4848,18 +4854,18 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.23125" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="Console" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/jobinput/static/jobinput" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/jobinput/python_script_delete" />
+      <recent name="$PROJECT_DIR$/jobinput/static/jobinput/R_script" />
       <recent name="$PROJECT_DIR$/jobinput/static/jobinput/images" />
       <recent name="$PROJECT_DIR$/jobinput/python_script" />
       <recent name="$PROJECT_DIR$/jobinput/static/jobinput/python_script" />
-      <recent name="$PROJECT_DIR$/templates" />
-      <recent name="$PROJECT_DIR$/jobinput" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -4969,16 +4975,31 @@
       <workItem from="1678114278974" duration="11188000" />
       <workItem from="1678472909893" duration="7036000" />
       <workItem from="1678735113681" duration="111000" />
+      <workItem from="1679285754089" duration="3529000" />
+      <workItem from="1680327268638" duration="309000" />
+      <workItem from="1682432309427" duration="226000" />
+      <workItem from="1682963695196" duration="600000" />
+      <workItem from="1682995961884" duration="68000" />
+      <workItem from="1683302725746" duration="4035000" />
+      <workItem from="1683554785061" duration="8825000" />
+      <workItem from="1683590449880" duration="66000" />
+      <workItem from="1684157905302" duration="4873000" />
+      <workItem from="1685726261785" duration="203000" />
+      <workItem from="1685726589897" duration="5186000" />
+      <workItem from="1686339003542" duration="6107000" />
+      <workItem from="1686547196479" duration="10792000" />
+      <workItem from="1686629281395" duration="2294000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="228051000" />
+    <option name="totallyTimeSpent" value="275164000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="209" y="45" width="1644" height="1027" extended-state="0" />
+    <frame x="-1802" y="3" width="1644" height="1027" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24817519" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -4995,8 +5016,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info active="true" anchor="bottom" x="-1864" y="172" width="1848" height="747" id="Terminal" order="10" visible="true" weight="0.39335477" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" x="-1864" y="172" width="1848" height="747" id="Terminal" order="10" sideWeight="0.9057178" visible="true" weight="0.24115756" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.09428224" side_tool="true" weight="0.43837085" />
       <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -5032,35 +5053,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/js/d3.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="698">
-          <caret line="9539" column="4" selection-start-line="9539" selection-start-column="4" selection-end-line="9539" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../venv/lib/python3.10/site-packages/django/utils/datastructures.py" />
-    <entry file="file://$PROJECT_DIR$/../venv/lib/python3.10/site-packages/django/template/loader.py" />
-    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/css/font-awesome.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/css/custom_scrolling.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jobinput/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jobinput/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/jobinput/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -5155,16 +5147,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/js/load_clustergram.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2093">
-          <caret line="93" column="1" selection-start-line="93" selection-start-column="1" selection-end-line="93" selection-end-column="1" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/js/clustergrammer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -5192,29 +5174,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/heatmap.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1656">
-          <caret line="72" column="31" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/R_script/gene_sets.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="24" selection-start-column="24" selection-end-column="24" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/R_script/FF_df_cpm.csv">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor" />
@@ -5230,14 +5195,6 @@
     <entry file="file://$PROJECT_DIR$/jobinput/python_script/.Rhistory">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/python_script/IMU_KRT_classifier.py" />
-    <entry file="file://$PROJECT_DIR$/templates/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1610">
-          <caret line="70" column="6" selection-start-line="70" selection-start-column="6" selection-end-line="70" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/home_backup.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3519">
@@ -5248,13 +5205,6 @@
             <element signature="n#ul#0;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/R_script/preprocessing.R">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4186">
-          <caret line="182" column="7" selection-start-line="182" selection-start-column="2" selection-end-line="182" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -5275,49 +5225,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/clustergramheatmap.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1679">
-          <caret line="73" column="112" selection-start-line="73" selection-start-column="31" selection-end-line="73" selection-end-column="112" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/runclassifier.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1196">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-          <folding>
-            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/images/figure1.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/jobinput/views.py">
+    <entry file="file://$PROJECT_DIR$/../venv/lib/python3.8/site-packages/django/core/handlers/exception.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" column="38" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="38" />
+        <state relative-caret-position="782">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jobinput/python_script/IMU_KRT_classifier.py">
+    <entry file="file://$PROJECT_DIR$/jobinput/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/R_script/preprocessing.R">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7015">
-          <caret line="318" column="8" selection-start-line="318" selection-start-column="8" selection-end-line="318" selection-end-column="8" />
+        <state relative-caret-position="245">
+          <caret line="250" selection-start-line="250" selection-end-line="250" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tumourclass/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="27" selection-start-column="27" selection-end-column="27" />
-          <folding>
-            <element signature="e#635#667#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/R_script/FF_df_cpm.csv">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/DisplayError.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -5326,23 +5255,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jobinput/urls.py">
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="32" column="58" selection-start-line="32" selection-start-column="58" selection-end-line="32" selection-end-column="58" />
-          <folding>
-            <element signature="e#636#664#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="3335">
+          <caret line="145" column="28" selection-start-line="145" selection-start-column="28" selection-end-line="145" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tumourclass/settings.py">
+    <entry file="file://$PROJECT_DIR$/../venv/lib/python3.8/site-packages/django/core/files/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3174">
-          <caret line="139" column="12" selection-start-line="139" selection-end-line="139" selection-end-column="12" />
-          <folding>
-            <element signature="e#312#336#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="874">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
         </state>
       </provider>
     </entry>
@@ -5359,17 +5282,132 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tumourclass/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="27" selection-start-column="27" selection-end-column="27" />
+          <folding>
+            <element signature="e#635#667#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="18" column="61" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/python_script/.IMU_KRT_classifier.py.swp" />
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/R_script/preprocessing2.R">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/python_script_dlt/IMU_KRT_classifier_old.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="368" selection-start-line="282" selection-end-line="368" />
+          <folding>
+            <element signature="e#60#74#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/clustergramheatmap.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-275">
+          <caret line="73" column="112" selection-start-line="73" selection-start-column="31" selection-end-line="73" selection-end-column="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/js/load_multiple_clustergrams.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/js/load_clustergram.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="21" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/python_script_dlt/IMU_KRT_classifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3404">
+          <caret line="161" column="45" selection-start-line="161" selection-start-column="45" selection-end-line="161" selection-end-column="45" />
+          <folding>
+            <element signature="e#8433#15450#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/python_script/IMU_KRT_classifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7866">
+          <caret line="355" column="16" selection-start-line="355" selection-start-column="16" selection-end-line="355" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tumourclass/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3197">
+          <caret line="140" column="17" selection-start-line="140" selection-end-line="140" selection-end-column="17" />
+          <folding>
+            <element signature="e#312#336#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="56" column="61" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/heatmap.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1232">
+          <caret line="120" selection-start-line="120" selection-end-line="120" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/runclassifier.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="132" column="26" selection-start-line="132" selection-start-column="26" selection-end-line="132" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
+        <state relative-caret-position="5796">
+          <caret line="252" column="51" selection-start-line="252" selection-start-column="51" selection-end-line="252" selection-end-column="51" />
           <folding>
             <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#a#0;n#a#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#figcaption#0;n#figure#0;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#div#0;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#div#0;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" column="68" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="68" />
         </state>
       </provider>
     </entry>

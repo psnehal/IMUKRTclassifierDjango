@@ -16,9 +16,11 @@ import subprocess
 from django.core.files import File
 
 from .python_script.IMU_KRT_classifier import runfile
+from clustergrammer import Network
 
 import glob
 import pandas as pd
+import json
 
 
 
@@ -46,7 +48,13 @@ def home(request,*args,**kwargs):
 
 def heatmap(request,*args,**kwargs):
 
-    return render (request, "heatmap.html",{})
+   #print("pcaf", pcaf)
+   pcaf = '/Users/snehalpatil/Documents/GithubProjects/ShitingProject/tumourclass/media/44f07e36-1898-40c6-97c8-35a262decb74/mult_view.json'
+   with open(pcaf) as jsonFile:
+       pcadata = json.load(jsonFile)
+
+
+   return render (request, "heatmap.html",{"pcadata": pcadata})
 
 
 def about(request,*args,**kwargs):
@@ -152,16 +160,16 @@ def jobsubmit(request):
         includeFF18ornot=request.POST.get('preloads')
         batchfilestatus=request.POST.get('batchfilestatus')
 
-        print("settings.path",settings.RSCRIPT_PATH)
-        rscriptfilepath = os.path.join(settings.RSCRIPT_PATH, "R_script/")+"preprocessing.R"
-        print("rscriptfilepath",rscriptfilepath)
+        #print("settings.path",settings.RSCRIPT_PATH)
+        rscriptfilepath = os.path.join(settings.RSCRIPT_PATH, "R_script/")+"preprocessing1.R"
+        print("batcheff",type(batcheff))
+        print("includeFF18ornot",includeFF18ornot)
 
   #batchremovalornot logic
-        if (includeFF18ornot == 1 and batcheff == 1 ):
+        if (int(batcheff) == 1) or int(includeFF18ornot) == 1:
             print("yes")
             batchremovalornot = "combat"
-        elif(includeFF18ornot == 0 and batcheff == 1 ):
-            batchremovalornot = "combat"
+            #if they select batcheffect == 0 and includeFF18ornot == 0 then batchremovalornot= not
         else:
             batchremovalornot = "not"
 
@@ -171,9 +179,20 @@ def jobsubmit(request):
             batch_effect_file = request.FILES['batchfile']
             print("batch_effect_file")
             print(batch_effect_file)
+            if request.method == 'POST' and request.FILES['batchfile']:
+                #if logcpm == '1':
+                batch_effect_file = request.FILES['batchfile']
+                print("batch_effect_file")
+                print(batch_effect_file)
+                batchfile = fs.save(batch_effect_file.name, batch_effect_file)
+                uploaded_file_urlb = fs.url(batchfile)
+                print("uploaded_file_urlb", uploaded_file_urlb)
+            else:
+                print("batch file is Null")
+                uploaded_file_urlb= 'NULL'
+                #batch_effect_file = 'NULL'
         else:
-            print("batch file is Null")
-            batch_effect_file = 'NULL'
+            uploaded_file_urlb= 'NULL'
 
 
         stmt  = "Rscript  "
@@ -181,28 +200,151 @@ def jobsubmit(request):
         stmt+= uploaded_file_url+ " "
         stmt+= cpmornot+ " "
         stmt+= batchremovalornot+ " "
-        stmt+= batch_effect_file+ " "
+        stmt+= uploaded_file_urlb+ " "
         stmt+= includeFF18ornot+ " "
         stmt+= file_save_path+ " "
         stmt+= os.path.join(settings.RSCRIPT_PATH, "R_script/")
         print("stmt :"+stmt)
+
+
 
         res = subprocess.call(stmt,shell = True)
         print("*************************************")
         print(res)
         django_file =''
 
-        outputfile = file_save_path + '/cpm_input_classifier.csv'
-        if(res == 0):
+
+
+        pcaf = file_save_path + '/PCA_related.json'
+        outputfile =''
+        if(res == 0 and batchremovalornot == 'not' ):
+            outputfile = file_save_path + '/cpm_input_classifier_no_batchre.csv'
+            print("its in not batchremovalornot loop ")
             some_file = open(outputfile, "r")
             django_file = File(some_file)
-            #print("django_file",django_file)
-
+            #print("pcaf", pcaf)
+            pcafile = File(pcaf)
+            with open(pcaf) as jsonFile:
+                pcadata = json.load(jsonFile)
+        elif(res == 0 and batchremovalornot == 'combat' ):
+            outputfile = '/Users/snehalpatil/Documents/GithubProjects/ShitingProject/tumourclass/jobinput/static/jobinput/R_script/' + 'raw_count_input.csv'
+            print("its in batchremovalornot yes loop")
+            some_file = open(outputfile, "r")
+            django_file = File(some_file)
+            #print("pcaf", pcaf)
+            pcafile = File(pcaf)
+            with open(pcaf) as jsonFile:
+                pcadata = json.load(jsonFile)
         else:
             print("its in th else loop")
             response = redirect('DisplayError')
+    #print(res)
+
+
+    return JsonResponse({"foldername": folder,"res":res,"pcajson":pcadata,"batchremovalornot":batchremovalornot,outputfile:outputfile})
+
+
+def runstepone(request):
+    #    <QueryDict: {'batcheff': ['no'], 'filet': ['0'], 'logcpm': ['1'], 'csrfmiddlewaretoken': ['MIKpWc5gL8uhQfxTWuCqbYEUGmj7P2aIkbJ4OYpC70c6VTlHrVFjCOvCe6wNJT9u']}>
+    print("hi from runstepone",request.POST)
+
+    lines = []
+    d= {}
+    res=0
+    foldername = request.POST.get('foldername')
+    file_save_path = os.path.join(settings.MEDIA_ROOT, foldername)
+    filename =  file_save_path+'/raw_count_input.csv'
+    batcheff =request.POST.get('batcheff')
+    cpmornot=request.POST.get('logcpm')
+    includeFF18ornot=request.POST.get('preloads')
+    batchfilestatus=request.POST.get('batchfilestatus')
+    rscriptfilepath = os.path.join(settings.RSCRIPT_PATH, "R_script/")+"preprocessing2.R"
+    batch_file_name =request.POST.get('batchfile')
+    batchremovalornot=request.POST.get('batchremovalornot')
+    if (batchfilestatus == "yes"):
+
+        batchfile = file_save_path+"/"+batch_file_name
+    else:
+
+        batchfile= 'NULL'
+            #batch_effect_file = 'NULL'
+
+
+
+    stmt  = "Rscript  "
+    stmt+= rscriptfilepath + " "
+    stmt+= filename+ " "
+    stmt+= cpmornot+ " "
+    stmt+= batchremovalornot+ " "
+    stmt+= batchfile+ " "
+    stmt+= includeFF18ornot+ " "
+    stmt+= file_save_path+ " "
+    stmt+= os.path.join(settings.RSCRIPT_PATH, "R_script/")
+    print("stmt :"+stmt)
+
+
+
+    res = subprocess.call(stmt,shell = True)
+    print("*************************************")
     print(res)
-    return JsonResponse({"foldername": folder,"res":res})
+    django_file =''
+
+
+
+    pcaf = file_save_path + '/PCA_related.json'
+    outputfile =''
+    if(res == 0 and batchremovalornot == 'not' ):
+        outputfile = file_save_path + '/cpm_input_classifier_batch.csv'
+        print("its in not batchremovalornot loop ")
+        some_file = open(outputfile, "r")
+        django_file = File(some_file)
+        #print("pcaf", pcaf)
+        pcafile = File(pcaf)
+        with open(pcaf) as jsonFile:
+            pcadata = json.load(jsonFile)
+    elif(res == 0 and batchremovalornot == 'combat' ):
+        outputfile = file_save_path + '/raw_count_input.csv'
+        print("its in batchremovalornot yes loop")
+        some_file = open(outputfile, "r")
+        django_file = File(some_file)
+        #print("pcaf", pcaf)
+        pcafile = File(pcaf)
+        with open(pcaf) as jsonFile:
+            pcadata = json.load(jsonFile)
+    else:
+        print("its in th else loop")
+        response = redirect('DisplayError')
+
+
+
+    return JsonResponse({"foldername": foldername,"res":res,"pcajson":pcadata,"batchremovalornot":batchremovalornot,outputfile:outputfile})
+
+
+
+
+def runprestep2(request,foldername):
+    print("froms tep 2 preprocessing step")
+    print(foldername)
+
+
+
+
+    if foldername != '':
+        print("filepath is "+foldername)
+
+        #https://stackoverflow.com/questions/63228094/how-can-i-create-download-link-using-django
+        filepath = '/Users/snehalpatil/Documents/GithubProjects/ShitingProject/tumourclass/media/'+foldername+'/cpm_input_classifier.csv'
+
+        # Open the file for reading content
+        path = open(filepath, "r")
+        # Set the mime type
+        mime_type, _ = mimetypes.guess_type(filepath)
+        print (mime_type)
+        # Set the return value of the HttpResponse
+        response = HttpResponse(path, content_type=mime_type)
+
+    #result file from the
+
 
 
 def DisplayError(request):
@@ -230,10 +372,13 @@ def runclassifier(request):
 
     #result file from the
     file_save_path = os.path.join(settings.MEDIA_ROOT, folderpath,"cpm_input_classifier.csv" )
+    heatmap_file = os.path.join(settings.MEDIA_ROOT, folderpath,"heatmap_data.txt" )
+    heatmap_json = os.path.join(settings.MEDIA_ROOT, folderpath,"mult_view.json" )
+    folder_save_path=os.path.join(settings.MEDIA_ROOT, folderpath)
 
     print(file_save_path)
 
-    pyfilepath = os.path.join(settings.RSCRIPT_PATH, "python_script/")
+    pyfilepath = settings.PYTHONSCRIPT_PATH
     print("pyfilepath",pyfilepath)
 
 
@@ -245,7 +390,7 @@ def runclassifier(request):
     cols = [0, 1, 2] # add more columns here
 
     df = pd.DataFrame()
-    arr = pd.read_csv("/Users/snehalpatil/Documents/GithubProjects/ShitingProject/IMUKRTclassifier/demo_result/predict_result.txt", sep='\t', header=None, usecols=cols)
+    #arr = pd.read_csv("/Users/snehalpatil/Documents/GithubProjects/ShitingProject/IMUKRTclassifier/demo_result/predict_result.txt", sep='\t', header=None, usecols=cols)
     # for ind in arr.index:
     #   print(arr[0][ind],arr[1][ind], arr[2][ind])
     # with open('/Users/snehalpatil/Documents/GithubProjects/ShitingProject/IMUKRTclassifier/demo_result/predict_result.txt') as f:
@@ -270,7 +415,22 @@ def runclassifier(request):
 
     models ='f,knn,gnb,svm,elasticnet'
     gene_set ='168,960'
-    runfile(pyfilepath,"1","/Users/snehalpatil/Documents/GithubProjects/ShitingProject/IMUKRTclassifier-lab_version/IMUKRT_classifier_lab_version/results/cpm_input_classifier.csv","/Users/snehalpatil/Documents/GithubProjects/ShitingProject/IMUKRTclassifier-lab_version/IMUKRT_classifier_lab_version/results/",None,None)
-    return render(request, "runclassifier.html", {"arr": arr} )
+    #def runfile(workdir, pca, input,output_dir,imumodel,gene_set):
+    runfile(pyfilepath,"1",file_save_path,folder_save_path,None,None)
+    result_file_path=file_save_path = os.path.join(settings.MEDIA_ROOT, folderpath,"predict_result.txt" )
+    arr = pd.read_csv(result_file_path, sep='\t', header=None, usecols=cols)
+
+    net = Network()
+    net.load_file(heatmap_file)
+    net.cluster()
+    net.write_json_to_file('viz', heatmap_json)
+    heatmap_json = File(heatmap_json)
+    #print("pcaf", pcaf)
+    heatmapjson = File(heatmap_json)
+    with open(heatmapjson) as jsonFile:
+        finaljson = json.load(jsonFile)
+
+
+    return render(request, "runclassifier.html", {"arr": file_save_path} )
 
 

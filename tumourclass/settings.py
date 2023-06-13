@@ -138,6 +138,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (str(BASE_DIR.joinpath('static')),) # new
 
 RSCRIPT_PATH = '/Users/snehalpatil/Documents/GithubProjects/ShitingProject/tumourclass/jobinput/static/jobinput/'
+PYTHONSCRIPT_PATH = '/Users/snehalpatil/Documents/GithubProjects/ShitingProject/tumourclass/jobinput/python_script'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

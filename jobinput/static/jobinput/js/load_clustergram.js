@@ -4,11 +4,15 @@ Example files
 
 var hzome = ini_hzome();
 
-make_clust('mult_view.json');
+make_clust('/Users/snehalpatil/Documents/GithubProjects/ShitingProject/tumourclass/media/44f07e36-1898-40c6-97c8-35a262decb74/mult_view.json');
 
 var about_string = 'Zoom, scroll, and click buttons to interact with the clustergram. <a href="http://amp.pharm.mssm.edu/clustergrammer/help"> <i class="fa fa-question-circle" aria-hidden="true"></i> </a>';
 
 function make_clust(inst_network){
+
+    console.log("from make clust");
+    console.log(inst_network);
+
 
     d3.json('json/'+inst_network, function(network_data){
 

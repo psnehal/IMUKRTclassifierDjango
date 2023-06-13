@@ -16,13 +16,14 @@ Including another URLconf
 
 from django.urls import path
 
-from jobinput.views import ajax_posting, jobsubmit
+from jobinput.views import ajax_posting, jobsubmit,runstepone
 from . import views
 
 
 urlpatterns = [
     path('', views.home, name='home'),
     path('jobsubmit/', jobsubmit, name='jobsubmit'),
+    path('runstepone/', runstepone, name='runstepone'),
     path('runclassifier',views.runclassifier, name='runclassifier'),
     path('clustergramheatmap',views.clustergramheatmap, name='clustergramheatmap'),
     path('heatmap', views.heatmap, name='heatmap'),
@@ -30,6 +31,7 @@ urlpatterns = [
     path('downloadfile/<str:imageid>/', views.download_file, name='download_file'),
     path('downloadfile/', views.download_file, name='download_file'),
     path('ajax-posting/', ajax_posting, name='ajax_posting'),
+    path('runprestep2/<uuid:foldername>/', views.runprestep2, name='runprestep2'),
     path('DisplayError/', ajax_posting, name='DisplayError'),
 
 

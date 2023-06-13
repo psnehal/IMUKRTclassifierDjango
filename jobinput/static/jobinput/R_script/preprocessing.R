@@ -4,6 +4,9 @@
 #'
 read_file<-function(file_name){
   library(data.table)
+  # There are some trick part here
+  # 1. the first column is the gene name, so we need to skip it
+  # 2. the first columnnames is the gene names. We need to judge this.
   df_use<-fread(file_name)
   return(df_use)
 
@@ -22,8 +25,11 @@ calculate_cpm<-function(gene_counts){
   expression_count$samples$lib.size <- colSums(expression_count$counts)
   expression_count <- calcNormFactors(expression_count, method="upperquartile")
   final_cpm<-cpm(expression_count, normalized.lib.sizes=TRUE, log=T)
-  row.names(final_cpm)<-expression_count$genes$genes
+  row.names(final_cpm)<-expression_count$genes$symbol
   colnames(final_cpm)<-colnames(gene_counts)[2:ncol(gene_counts)]
+  #add gene symbol as the first column
+  final_cpm<-cbind(rownames(final_cpm),final_cpm)
+  colnames(final_cpm)[1]<-'symbol'
   return(final_cpm)
 
 
@@ -142,8 +148,11 @@ whether_perform_PCA_for_next_step<-function(count_df,json_file){
   library(rjson)
   gene_set_list <- fromJSON(file=json_file)
   all_gene_set_num_of_genes<-names(gene_set_list)
-  each_gene_set_array<-lapply(gene_set_list,function(x){sum(x %in% rownames(count_df))})
-  judge_array_all<-sum(sapply(gene_set_list,function(x){all(TRUE,x %in% rownames(count_df))}))
+  count_df<-as.data.frame(count_df)
+  each_gene_set_array<-lapply(gene_set_list,function(x){sum(x %in% count_df$symbol)})
+  #all(TRUE,x %in% count_df$symbol)
+  judge_array_all<-sum(sapply(gene_set_list,function(x){
+    ifelse(sum(x %in% count_df$symbol)>length(x)*0.9,1,0)}))
   #judge the result
   if (judge_array_all<length(each_gene_set_array)){
     PCA=1
@@ -237,5 +246,5 @@ df_value_cpm<-as.data.frame(df_value_cpm)
 list_judgement<-whether_perform_PCA_for_next_step(df_value_cpm,paste0(options_a[7],'/gene_sets.json'))
 jsonData <- toJSON(list_judgement)
 write(jsonData, paste0(options_a[6],"/PCA_related.json"))
-#print(df_value_cpm)
-write.csv(df_value_cpm,paste0(options_a[6],'/cpm_input_classifier.csv'))
+print(df_value_cpm)
+write.csv(df_value_cpm,paste0(options_a[6],'/cpm_input_classifier.csv'),row.names=F)
