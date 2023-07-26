@@ -1,7 +1,12 @@
 import mimetypes
+import zipfile
+from io import BytesIO
+
+from zipfile import ZipFile
 
 from django.http import HttpResponse
 from django.http import JsonResponse
+
 from django.shortcuts import redirect
 
 from django.shortcuts import render
@@ -21,6 +26,10 @@ from clustergrammer import Network
 import glob
 import pandas as pd
 import json
+
+from django.shortcuts import render
+
+from urllib.parse import quote
 
 
 
@@ -49,9 +58,13 @@ def home(request,*args,**kwargs):
 def heatmap(request,*args,**kwargs):
 
    #print("pcaf", pcaf)
-   pcaf = '/Users/snehalpatil/Documents/GithubProjects/ShitingProject/tumourclass/media/44f07e36-1898-40c6-97c8-35a262decb74/mult_view.json'
+   pcaf = '/Users/snehalpatil/Documents/GithubProjects/ShitingProject/tumourclass/media/be8f318a-604d-47f6-8c2e-5d49c7283e78/mult_view.json'
    with open(pcaf) as jsonFile:
        pcadata = json.load(jsonFile)
+       foldername= '96555372-c8ac-4a2b-81c3-ab357929c1dc'
+
+       encoded_foldername = quote(foldername)
+       print(pcadata);
 
 
    return render (request, "heatmap.html",{"pcadata": pcadata})
@@ -61,26 +74,54 @@ def about(request,*args,**kwargs):
 
     return render (request, "about.html",{})
 
+def download_result(request):
+    foldername = request.GET.get('foldername')
+    print(foldername)
+    folderpath= os.path.join(settings.MEDIA_ROOT, foldername)
+    file_blueprint = BytesIO()
+    zip_file = ZipFile(file_blueprint, 'a')
 
-def download_file(uuidno):
+#create the full path to the folder you want to download the files from
 
 
+    for filename in os.listdir(folderpath):
+        try:
+            #characterize the from path and the destination path as first and second argument
+            zip_file.write(os.path.join(folderpath + "/" + filename), os.path.join(folderpath + "/" + filename))
+        except Exception as e:
+            print(e)
+    zip_file.close()
+    response = HttpResponse(file_blueprint.getvalue(), content_type = "application/x-zip-compressed")
+    response["Content-Disposition"] = "attachment; filename= your-zip-folder-name.zip"
+    return response
 
+
+def download_file(request):
+
+    uuidno = request.GET.get('uuid')
+    batchrem= request.GET.get('batchrem')
     if uuidno != '':
-        print("filepath is "+uuidno)
+        print(uuidno)
+        if(batchrem =='combat'):
+            file_save_path = os.path.join(settings.MEDIA_ROOT, uuidno,"cpm_input_classifier.csv" )
+
+        else:
+            file_save_path = os.path.join(settings.MEDIA_ROOT, uuidno,"cpm_input_classifier_no_batchre.csv" )
+
 
         #https://stackoverflow.com/questions/63228094/how-can-i-create-download-link-using-django
-        filepath = '/Users/snehalpatil/Documents/GithubProjects/ShitingProject/tumourclass/media/'+uuid+'/cpm_input_classifier.csv'
+        #filepath = '/Users/snehalpatil/Documents/GithubProjects/ShitingProject/tumourclass/media/'+str(uuidno)+'/cpm_input_classifier.csv'
 
         # Open the file for reading content
-        path = open(filepath, "r")
+        path = open(file_save_path, "r")
+        filename = os.path.basename(file_save_path)
         # Set the mime type
-        mime_type, _ = mimetypes.guess_type(filepath)
+        mime_type, _ = mimetypes.guess_type(file_save_path)
         print (mime_type)
         # Set the return value of the HttpResponse
         response = HttpResponse(path, content_type=mime_type)
         # Set the HTTP header for sending to browser
-        response['Content-Disposition'] = "attachment; filename=%s" % filepath
+        response['Content-Disposition'] = "attachment; filename=%s" , filename
         return response
     else:
         # Load the template
@@ -217,6 +258,7 @@ def jobsubmit(request):
 
         pcaf = file_save_path + '/PCA_related.json'
         outputfile =''
+        outputfilename=''
         if(res == 0 and batchremovalornot == 'not' ):
             outputfile = file_save_path + '/cpm_input_classifier_no_batchre.csv'
             print("its in not batchremovalornot loop ")
@@ -227,7 +269,7 @@ def jobsubmit(request):
             with open(pcaf) as jsonFile:
                 pcadata = json.load(jsonFile)
         elif(res == 0 and batchremovalornot == 'combat' ):
-            outputfile = '/Users/snehalpatil/Documents/GithubProjects/ShitingProject/tumourclass/jobinput/static/jobinput/R_script/' + 'raw_count_input.csv'
+            outputfile =file_save_path  + '/raw_count_input.csv'
             print("its in batchremovalornot yes loop")
             some_file = open(outputfile, "r")
             django_file = File(some_file)
@@ -357,23 +399,43 @@ def DisplayError(request):
 
 def clustergramheatmap(request):
     print ("testng clustergram")
-    return render (request, "clustergramheatmap.html",{"form": "tes" })
+    folderpath="5d271d9f-966f-4252-8ed6-b9a01533932d"
+    folder_save_path=os.path.join(settings.MEDIA_ROOT, "5d271d9f-966f-4252-8ed6-b9a01533932d")
+    encoded_foldername = quote(folderpath)
+    heatmap_json = os.path.join(settings.MEDIA_ROOT, folderpath,"mult_view.json" )
+    file_save_path = os.path.join(settings.MEDIA_ROOT, folderpath,"cpm_input_classifier.csv" )
+
+    with open(heatmap_json) as jsonFile:
+        finaljson = json.load(jsonFile)
+
+
+    return render (request, "clustergramheatmap.html",{"arr": file_save_path,"finaljson":finaljson,"foldername":encoded_foldername})
 
 
 
 
 def runclassifier(request):
 
-    print(request.POST.get('outputfile'))
+    print("****************************",request.GET.get('outputfile'))
     lines = []
     d= {}
 
-    folderpath = request.POST.get('outputfile')
+    folderpath = request.GET.get('outputfile')
+    encoded_foldername = quote(folderpath)
+    batchremovalornot= request.GET.get('batchremovalornot')
+
+    if(batchremovalornot =='combat'):
+        file_save_path = os.path.join(settings.MEDIA_ROOT, folderpath,"cpm_input_classifier.csv" )
+    else:
+        file_save_path = os.path.join(settings.MEDIA_ROOT, folderpath,"cpm_input_classifier_no_batchre.csv" )
+
+
 
     #result file from the
-    file_save_path = os.path.join(settings.MEDIA_ROOT, folderpath,"cpm_input_classifier.csv" )
+
     heatmap_file = os.path.join(settings.MEDIA_ROOT, folderpath,"heatmap_data.txt" )
     heatmap_json = os.path.join(settings.MEDIA_ROOT, folderpath,"mult_view.json" )
+    pca_json = os.path.join(settings.MEDIA_ROOT, folderpath,"PCA_related.json" )
     folder_save_path=os.path.join(settings.MEDIA_ROOT, folderpath)
 
     print(file_save_path)
@@ -416,7 +478,21 @@ def runclassifier(request):
     models ='f,knn,gnb,svm,elasticnet'
     gene_set ='168,960'
     #def runfile(workdir, pca, input,output_dir,imumodel,gene_set):
-    runfile(pyfilepath,"1",file_save_path,folder_save_path,None,None)
+    with open(pca_json) as pcajson:
+        pcajson = json.load(pcajson)
+
+    for key , value in pcajson.items():
+        print("key is ",key)
+        print("value is ",value)
+        if key == "PCA":
+            pcaval = value
+
+    print(pyfilepath)
+    print(pcaval)
+    print(file_save_path)
+    print(folder_save_path)
+
+    runfile(pyfilepath,pcaval,file_save_path,folder_save_path,None,None)
     result_file_path=file_save_path = os.path.join(settings.MEDIA_ROOT, folderpath,"predict_result.txt" )
     arr = pd.read_csv(result_file_path, sep='\t', header=None, usecols=cols)
 
@@ -424,13 +500,12 @@ def runclassifier(request):
     net.load_file(heatmap_file)
     net.cluster()
     net.write_json_to_file('viz', heatmap_json)
-    heatmap_json = File(heatmap_json)
-    #print("pcaf", pcaf)
-    heatmapjson = File(heatmap_json)
-    with open(heatmapjson) as jsonFile:
+
+
+    with open(heatmap_json) as jsonFile:
         finaljson = json.load(jsonFile)
 
 
-    return render(request, "runclassifier.html", {"arr": file_save_path} )
+    return render(request, "runclassifier.html", {"arr": arr,"finaljson":finaljson,"foldername":encoded_foldername} )
 
 

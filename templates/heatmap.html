@@ -1,7 +1,7 @@
 {% load static %}
 
 
-<html lang="en">
+
 
 <head>
 
@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Clustergrammer.js</title>
+
 
 
 
@@ -86,12 +86,9 @@
     </style>
 
 
-    </head>
 
-    <body>
-    <div id='container-id-1'>
-        <h1 class='wait_message'>Please wait ...</h1>
-    </div>
+
+
 
 
     <script src="{% static 'jobinput/js/d3.js' %}"></script>
@@ -102,12 +99,6 @@
     <script src="{% static 'jobinput/js/underscore-min.js' %}"></script>
     <script src="{% static 'jobinput/js/bootstrap.js' %}"></script>
 
-
-
-
-
-
-
     <!-- Clustergrammer JS -->
     <script src="{% static 'jobinput/js/clustergrammer.js' %}"></script>
 
@@ -115,66 +106,70 @@
     <script src="{% static 'jobinput/js/Enrichrgram.js' %} "></script>
     <script src="{% static 'jobinput/js/hzome_functions.js' %}"></script>
     <script src="{% static 'jobinput/js/send_to_Enrichr.js' %}"></script>
+    <script src="{% static 'jobinput/js/send_to_Enrichr.js' %}"></script>
 
     <script>
-        var hzome = ini_hzome();
+        document.addEventListener('DOMContentLoaded', function() {
+            // Your JSON data
+            var network_data = {{ pcadata|safe }};
+            //var readjsonfile =   "{% static 'jobinput/media' %}/be8f318a-604d-47f6-8c2e-5d49c7283e78/mult_view.json";
 
-        pcadata = "{{ pcadata }}";
+            console.log(network_data);
 
-        d3.json(pcadata, function(data) {
-            console.log(data);
+
+
+            var hzome = ini_hzome();
+            var outer_margins = {
+                'top':5,
+                'bottom':30,
+                'left':195,
+                'right':2
+            };
+
+            var viz_size = {
+                'width':1000,
+                'height':600
+            };
+            var about_string = 'Zoom, scroll, and click buttons to interact with the clustergram. <a href="http://amp.pharm.mssm.edu/clustergrammer/help"> <i class="fa fa-question-circle" aria-hidden="true"></i> </a>';
+
+            // define arguments object
+            var args = {
+                root: '#container-id-1',
+                'network_data': network_data,
+                'about':about_string,
+                'row_tip_callback':hzome.gene_info,
+                'dendro_callback':dendro_callback,
+                'matrix_update_callback':matrix_update_callback,
+                'sidebar_width':150,
+                // 'tile_colors':['#ED9124','#1C86EE'],
+                // 'ini_view':{'N_row_var':20}
+                // 'ini_expand':true
+            };
+
+            resize_container(args);
+
+
+
+            cgm = Clustergrammer(args);
+
+            check_setup_enrichr(cgm);
+
+            d3.select(cgm.params.root + ' .wait_message').remove();
+
+            d3.select(cgm.params.root+ ' .title_section')
+                .append('a')
+                .attr('href', window._config['ENTRY_POINT'] + '/')
+                .attr('target', '_blank')
+                .append('img')
+                .classed('title_image',true)
+                .attr('src','static/img/clustergrammer_logo.png')
+                .attr('alt','clustergrammer')
+                .style('width','145px')
+                .style('margin-left','3px')
+                .style('margin-top','5px');
+
+
         });
-
-
-        make_clust('/Users/snehalpatil/Documents/GithubProjects/ShitingProject/tumourclass/media/44f07e36-1898-40c6-97c8-35a262decb74/mult_view.json');
-
-        var about_string = 'Zoom, scroll, and click buttons to interact with the clustergram. <a href="http://amp.pharm.mssm.edu/clustergrammer/help"> <i class="fa fa-question-circle" aria-hidden="true"></i> </a>';
-
-        function make_clust(inst_network){
-
-            console.log("from make clust");
-            console.log(inst_network);
-
-            d3.json(inst_network, function(data) {
-                console.log(data);
-            });
-
-
-            d3.json(inst_network, function(network_data){
-
-                // define arguments object
-                var args = {
-                    root: '#container-id-1',
-                    'network_data': network_data,
-                    'about':about_string,
-                    'row_tip_callback':hzome.gene_info,
-                    'col_tip_callback':test_col_callback,
-                    'tile_tip_callback':test_tile_callback,
-                    'dendro_callback':dendro_callback,
-                    'matrix_update_callback':matrix_update_callback,
-                    'cat_update_callback': cat_update_callback,
-                    'sidebar_width':150,
-                    // 'tile_colors':['#ED9124','#1C86EE'],
-                    // 'ini_view':{'N_row_var':20}
-                    // 'ini_expand':true
-                };
-
-                resize_container(args);
-
-                d3.select(window).on('resize',function(){
-                    resize_container(args);
-                    cgm.resize_viz();
-                });
-
-                cgm = Clustergrammer(args);
-
-                check_setup_enrichr(cgm);
-
-                d3.select(cgm.params.root + ' .wait_message').remove();
-
-            });
-
-        }
 
         function matrix_update_callback(){
 
@@ -222,17 +217,28 @@
                 .style('width', screen_width+'px')
                 .style('height', screen_height+'px');
         }
+
+
     </script>
 
+
+
     <!-- make clustergram -->
+</head>
+
+<body>
+
+
+
+
+<div id='container-id-1'>
+    <h1 class='wait_message'>Please wait ...</h1>
+</div>
 
 
 
 
 
-    </body>
-
-    </html>
 
 
 

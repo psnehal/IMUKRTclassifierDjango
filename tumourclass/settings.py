@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'corsheaders',
+
 
 
     #own
@@ -151,3 +151,19 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 CSRF_TRUSTED_ORIGINS = ['https://hpv-hnscc-subtypeclassifier.dcmb.med.umich.edu','https://*.127.0.0.1']
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = '/var/www/subtypeclassifier/static/jobinput/media/'
+# #STATIC_ROOT = i#os.path.join(BASE_DIR, 'static/')
+# STATIC_ROOT = "/var/www/subtypeclassifier/static"
+#
+# RSCRIPT_PATH = '/var/www/subtypeclassifier/static/jobinput/'
+# RSCRIPT_PATH = '/Users/snehalpatil/Documents/GithubProjects/ShitingProject/tumourclass/jobinput/static/jobinput/'
+# PYTHONSCRIPT_PATH = '/Users/snehalpatil/Documents/GithubProjects/ShitingProject/tumourclass/jobinput/python_script'
+#
+#
+# STATICFILES_DIRS = [BASE_DIR / "static"]
+# CSRF_TRUSTED_ORIGINS = ['https://hpv-hnscc-subtypeclassifier.dcmb.med.umich.edu','https://*.127.0.0.1']
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

@@ -1,62 +1,8 @@
+{% extends "base.html" %}
 {% load static %}
 
 
-<!DOCTYPE html>
-<html>
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="{% static 'jobinput/main.css' %}">
-
-    <!-- Bootstrap CSS -->
-    <script src="{% static 'jobinput/js/jquery-3.5.1.js' %}"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static 'jobinput/main.css' %}">
-    <script src="{% static 'jobinput/js/selection.js' %}"></script>
-
-
-
-
-
-    <title> IMU/KRT tumor classiMolecular Tumor Subtype Classification Tool for HPV-associated Head and Neck Cancer Samples</title>
-</head>
-<body>
-<div class="navbar navbar-static-top pb-2" role="navigation">
-    <div class="navbar-header mb-4 flex-wrap: wrap;">
-
-        <a class="navbar-brand mx-auto mb-1 text-wrap" href="/" style="text-decoration:none;color: white; font-size: xx-large">Molecular Tumor Subtype Classification Tool for HPV-associated Head and Neck Cancer Samples
-        </a>
-        <a class="navbar-brand mx-auto" href="/#">
-            <a class="navbar-center" href="https://sph.umich.edu/precision-health-data-science/" target="_blank"><img src="" alt="" style="height:auto; width: 12em;" /></a>
-
-        </a>
-
-    </div>
-    <br/>
-    <br/>
-
-
-</div>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-item nav-link"  href="/about">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-item nav-link"  href="/MGI-freeze3/top_hits">Contacts</a>
-            </li>
-
-
-
-        </ul>
-    <br/>
-
-    </div>
-</nav>
+{% block content %}
 <div class="row justify-content-center p-2">
     <h3 class="text-center">Welcome to the Subtype Classification Tool for HPV+ HNSCC samples!</h3>
 </div>
@@ -225,21 +171,14 @@
 
                                 </tr>
                             </table>
-                            <div id="outputfile2" style="display: none";>
 
+                        </div>
 
+                        <div id="outputfile2" style="display: none";>
+                            Step 1 a is done now runnign the step 2 </a>
+                        </div>
 
-                                Step 1 a is done now runnign the step 2 </a>
-                            </div>
-
-                            <div id="outputfile" style="display: none";>
-
-                                {{foldername}}
-
-                                {{pcadata}}
-
-                                log2cpmmatrix matrix created in step1: <a href="{% url 'download_file' %}?uuidno={{foldername}}" type="button">Download Matrix</a>
-                            </div>
+                        <div id="outputfile">
                         </div>
 
 
@@ -247,35 +186,24 @@
 
                     </div>
                 </fieldset>
+                {% csrf_token %}
             </form>
 
             <script>
                 $('#form').on('submit', function(e){
 
                     e.preventDefault();
-                    console.log("hurray");
-
-
                     var ctoken = '{{ csrf_token }}';
-                    console.log($('#uploadfile')[0].files[0]);
-
                     var formData = new FormData();
                     formData.append('uploadfile', $('#uploadfile')[0].files[0]);
                     formData.append('csrfmiddlewaretoken', ctoken);
                     formData.append('batcheff', $('input[name="batcheff"]:checked').val());
                     formData.append('logcpm', $('input[name="logcpm"]:checked').val());
                     formData.append('preloads', $('input[name="preloads"]:checked').val());
-
                     var fileb = document.getElementById('batchfile');
-                    console.log(fileb);
-                    console.log();
-
                     batcheff = $('input[name="batcheff"]:checked').val();
-
-
-
                     if(batcheff == 0) {
-                        console.log("got the batch file is selected not ");
+
                         formData.append('batchfilestatus','NULL');
                     }
                     else
@@ -285,83 +213,88 @@
 
                     }
 
-
-
                     $.ajax({
                         timeout: 1000000,
                         beforeSend: function(){
                             document.getElementById("mybox").innerHTML = '<div class="progress"><div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div></div>';
                             $('.progress-bar').animate({width: "30%"}, 100);
+
+                            console.log("i m in 30");
                         },
                         type : "POST",
                         url: "{% url 'jobsubmit' %}",
                         data : formData,
-
-                        /*data: {
-                            uploadfile : $('#uploadfile').val(),
-                            batcheff : 'no',
-                            logcpm : 'yes',
-                            csrfmiddlewaretoken: '{{ csrf_token }}',
-                            dataType: "json",
-
-                        },*/
-
                         success: function(response){
-                            $('#output').html(response) /* response message */
-                            $('.progress-bar').animate({width: "50%"}, 100);
+                            $('#output').html(response);/* response message */
+
                             setTimeout(function(){
-                                $('.progress-bar').css({width: "100%"});
+                                $('.progress-bar').css({width: "70%"});
+                                console.log("i m in 70%");
                                 setTimeout(function(){
                                     $('.my-box').html(response);
                                 }, 100);
                             }, 500);
 
-                            console.log("Thankyou for reaching us out " + response.foldername);
-                            console.log("Thankyou for reaching us out " + response.res);
-
-                            var res = response.res;
+                                var res = response.res;
                              foldename = response.foldername;
                              batchremovalornot= response.batchremovalornot;
 
                             if(res == 1)
                             {
-
-                                document.getElementById("mybox").innerHTML = "Sorry job failed . Contact admin for more details";
-
-                            }
-
-
-
-
-
-
-
-
+                                document.getElementById("mybox").innerHTML = "Sorry job failed . Contact admin for more details";}
                         },
                         complete: function () {
                             console.log("its in the complete log");
 
                             if(batchremovalornot == 'combat')
                             {
+                                setTimeout(function(){
+                                    //$('.progress-bar').css({width: "50%"});
+                                    setTimeout(function(){
+                                    var testsen='<p>Preprocessing step 1 is done and running the Preprocessing step 2 </p>'
+                                    +'<div class="progress"><div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div></div>';
 
-                                console.log('foldename :', foldename);
-                                document.getElementById("mybox").innerHTML = "<p>preprocessing step 1 is done and running the Preprocessing step 2 </p>";
+                                        document.getElementById("mybox").innerHTML = testsen;
+                                        console.log("i m in 50%");
+                                        $('.progress-bar').css({width: "50%"});
+                                    }, 100);
+                                }, 2
+
+                            );
 
                                     runStep2(foldename);
                             }
                             else
                             {
 
-                                $("#outputfile").show();
-                                var step2 =
-                                    '<div class="form-group border m-4"><b>' +
-                                    '<form action="runclassifier" id="step2form" method="POST">' +
 
-                                    '<div class="col-lg-10 col-md-12 col-sm-12 text-center">\n' +
-                                    '<label class="p-2"> <b>Step 2:Run Subtype Classification</b></label>\n' +
-                                    '<br><div class="p-2"><input type="submit" name="submit" value="Run step 2"></div>'+
+                                var downloadUrl = '/downloadfile?uuid='+foldename+"&batchr="+batchremovalornot;
+                                var linkText = 'Download Matrix';
+                                console.log("link is",downloadUrl);
+                                var anchorElement = '<hr>Download log2cpmmatrix matrix created in step1 here: <a href='+downloadUrl+' type="button">'+linkText+'</a>';
+                                var downloadLinkContainer = document.getElementById('outputfile');
+                                downloadLinkContainer.innerHTML = anchorElement;
+
+
+
+
+
+
+                                var step2 =
+
+                                    '<div class="form-group  m-4"><b>' +
+                                    '<form action="runclassifier" id="step2form" method="GET">' +
+
+                                    '<div class="col-lg-11 col-md-11 col-sm-11 text-center">\n' +
+                                    '<label class="p-2"> Step 2 : Run Subtype Classification</label>\n' +
+                                    '<br>' +
+
+                                    '<div class="col-md-12 col-sm-12 text-center pt-3">'+
+
+                                    '<input class="p-2" type="submit" name="submit" value="Run step 2 "></div>'+
                                     '</div>' +
-                                    '<input type="hidden" id="outputfile" name="outputfile" value="'+foldename+ '">'+
+                                    '<input id="batchremovalornot" hidden name="batchremovalornot" value="'+batchremovalornot+ '">'+
+                                    '<input id="outputfile"  hidden name="outputfile" value="'+foldename+ '">'+
                                     '{% csrf_token %}' +
                                     '</div>'+
                                     '</form>';
@@ -381,8 +314,6 @@
                         },
                         processData: false,
                         contentType: false
-
-
                     });
 
 
@@ -402,19 +333,9 @@
                     formData.append('preloads', $('input[name="preloads"]:checked').val());
 
                     var fileb = document.getElementById('batchfile');
-
-
-
                     batcheff = $('input[name="batcheff"]:checked').val();
-
                     if(batcheff == 0) {
-                        alert("no file selected")
 
-                    }
-
-
-                    if(batcheff == 0) {
-                        console.log("got the batch file is selected not ");
                         formData.append('batchfilestatus','NULL');
                     }
                     else
@@ -426,11 +347,11 @@
 
                     $.ajax({
                         timeout: 1000000,
+                        type : "POST",
                         beforeSend: function(){
                             document.getElementById("mybox").innerHTML = '<div class="progress"><div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div></div>';
-                            $('.progress-bar').animate({width: "30%"}, 100);
+                            $('.progress-bar').animate({width: "90%"}, 100);
                         },
-                        type : "POST",
                         url: "{% url 'runstepone' %}",
                         data : formData,
 
@@ -444,8 +365,8 @@
                         },*/
 
                         success: function(response){
-                            $('#output').html(response) /* response message */
-                            $('.progress-bar').animate({width: "100%"}, 100);
+                            $('#output').html(response) ;/* response message */
+
                             setTimeout(function(){
                                 $('.progress-bar').css({width: "100%"});
                                 setTimeout(function(){
@@ -467,34 +388,30 @@
 
                             }
 
-
-
-
-
-
-
-
                         },
                         complete: function () {
                             console.log("its in the complete log");
 
-
-
                             console.log("batchremovalornot",batchremovalornot);
                             console.log("foldename",foldename);
 
+                            var downloadUrl = '/downloadfile?uuid='+foldename+"&batchr="+batchremovalornot;
+                            var linkText = 'Download Matrix';
+                            console.log("link is",downloadUrl);
+                            var anchorElement = '<hr>Download log2cpmmatrix matrix created in step1 here: <a href='+downloadUrl+' type="button">'+linkText+'</a>';
+                            var downloadLinkContainer = document.getElementById('outputfile');
+                            downloadLinkContainer.innerHTML = anchorElement;
 
+                            var step2 =
+                                    '<div class="form-group m-4"><b>' +
+                                    '<form action="runclassifier" id="step2form" method="GET">' +
 
-                                $("#outputfile").show();
-                                var step2 =
-                                    '<div class="form-group border m-4"><b>' +
-                                    '<form action="runclassifier" id="step2form" method="POST">' +
-
-                                    '<div class="col-lg-10 col-md-12 col-sm-12 text-center">\n' +
-                                    '<label class="p-2"> <b>Step 2:Run Subtype Classification</b></label>\n' +
+                                    '<div class="col-lg-12 col-md-12 col-sm-12 text-center">\n' +
+                                    '<label class="p-2"> Step 2 : Run Subtype Classification</label>\n' +
                                     '<br><div class="p-2"><input type="submit" name="submit" value="Run step 2"></div>'+
                                     '</div>' +
-                                    '<input type="hidden" id="outputfile" name="outputfile" value="'+foldename+ '">'+
+                                    '<input id="batchremovalornot" hidden name="batchremovalornot" value="'+batchremovalornot+ '">'+
+                                    '<input id="outputfile"  hidden name="outputfile" value="'+foldename+ '">'+
                                     '{% csrf_token %}' +
                                     '</div>'+
                                     '</form>';
@@ -528,7 +445,7 @@
             </script>
 
             <div id='loader' style='display: none;'>
-                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">75%</div>
             </div>
 
             <input type="hidden" id="imageid" name="imageid" value={{uuid}}>
@@ -564,27 +481,17 @@
     </div>
 </main>
 
-{% block content %}
+
 
 
 
 
 
 </div>
-
-
-
-
-<br/> <br/>
 
 
 
 {% csrf_token %}
-<span class="col-md-1 col-md-offset-2 text-center"></span>
-<div class="col-md-8">
-
-
-</div>
 
 
 
@@ -600,10 +507,8 @@
 
 </div>
 
-{% endblock %}
 
-</body>
-</html>
+{% endblock %}
 
 
 

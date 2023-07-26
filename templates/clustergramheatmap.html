@@ -1,114 +1,338 @@
 
-
 {% load static %}
-
-
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
-<link rel="shortcut icon" href="img/graham_cracker.ico"  type="image/x-icon">
-
-<link rel="stylesheet" href="{% static 'jobinput/css/font-awesome.min.css' %}">
-<link rel="stylesheet" href="{% static 'jobinput/css/bootstrap.css' %}">
-<link rel="stylesheet" href="{% static 'jobinput/css/custom.css' %} ">
-
-<script src="{% static 'jobinput/js/iframeResizer.min.js' %} "></script>
-
-
-
-
-
-<script src="{% static 'jobinput/js/d3.js' %}"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
-<script src="{% static 'jobinput/js/underscore-min.js' %}"></script>
-<script src="{% static 'jobinput/js/bootstrap.js' %}"></script>
-
-<script src="{% static 'jobinput/js/clustergrammer.js' %}"></script>
-<script src="{% static 'jobinput/js/Enrichrgram.js' %}"></script>
-<script src="{% static 'jobinput/js/hzome_functions.js' %}"></script>
-<script src="{% static 'jobinput/js/send_to_Enrichr.js' %}"></script>
-
-
-
-<script>
-    iFrameResize({ log: true }, '#myIframe')
-</script>
-<style>
-    body {
-        margin: 0px;
-        padding: 0px;
-    }
-
-    /* iframe's parent node */
-    div#root {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-    }
-
-    /* iframe itself */
-    div#root > iframe {
-        display: block;
-        width: 100%;
-        height: 100%;
-        border: none;
-    }
-
-    iframe {
-        width: 1px;
-        min-width: 100%;
-    }
-
-</style>
-
-
-
+<!DOCTYPE html>
+<html>
 <head>
-    <title>iframe Test</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-</head>
-<body>
-<div id="root" class="container-sm">
-    <iframe id="myIframe" src="http://maayanlab.cloud/clustergrammer/viz/6373c14738a7ff000ed14ef7/matrix_tab.txt" width="70%" scrolling="yes" ></iframe>
 
-</div>
-</body>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="shortcut icon" href="img/graham_cracker.ico"  type="image/x-icon">
+
+    <link rel="stylesheet" href="{% static 'jobinput/css/font-awesome.min.css' %}">
+
+
+
+    <style type="text/css">
+
+        /* Sticky footer styles
+        -------------------------------------------------- */
+        html, body {
+            max-width: 100%;
+            overflow-x:hidden;
+        }
+
+        /* Wrapper for page content to push down footer */
+        /* Negative indent footer by its height */
+        /* Pad bottom by footer height */
+        #wrap {
+            min-height: 100%;
+            min-width: 800px;
+        }
+
+        /* Set the fixed height of the footer here */
+        #footer {
+            height: 60px;
+            background-color: #f5f5f5;
+            text-align: center;
+            background-color: #f5f5f5;
+            font-size: 13px;
+            padding-left:10px;
+            padding-right:10px;
+            margin-top: 50px;
+        }
+
+        #footer_text_container{
+            margin-top: 10px;
+            margin-bottom: 0px;
+            min-width: 950px;
+        }
+
+        .clustergrammer_container{
+            width: 1140px;
+            height: 750px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .viz_title{
+            width: 100%;
+            font-size: 30px;
+            font-weight: 300;
+            /*margin-left: -10px;*/
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #DEDEDE;
+        }
+
+        .viz_description{
+            font-size: 16px;
+            font-weight: 300;
+            margin-top: 10px;
+            margin-left: 5px;
+            margin-right: 20px;
+            text-align: justify;
+            margin-bottom: 30px;
+        }
+
+    </style>
+
+    <script src="{% static 'jobinput/js/d3.js' %}"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <script src="{% static 'jobinput/js/underscore-min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+    <!-- Clustergrammer JS -->
+    <script src="{% static 'jobinput/js/clustergrammer.js' %}"></script>
+
+    <!-- optional modules -->
+    <script src="{% static 'jobinput/js/Enrichrgram.js' %} "></script>
+    <script src="{% static 'jobinput/js/hzome_functions.js' %}"></script>
+    <script src="{% static 'jobinput/js/send_to_Enrichr.js' %}"></script>
+    <script src="{% static 'jobinput/js/send_to_Enrichr.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'jobinput/main.css' %}">
+    <script src="{% static 'jobinput/js/selection.js' %}"></script>
+
+
+
+
+    <script>
+
+        $(document).ready(function(){
+            $("#myTab a").click(function(e){
+                e.preventDefault();
+                $(this).tab("show");
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Your JSON data
+            var network_data = {{ finaljson|safe }};
+            //var readjsonfile =   "{% static 'jobinput/media' %}/be8f318a-604d-47f6-8c2e-5d49c7283e78/mult_view.json";
+
+            console.log(network_data);
+
+
+
+            var hzome = ini_hzome();
+            var outer_margins = {
+                'top':5,
+                'bottom':30,
+                'left':195,
+                'right':2
+            };
+
+            var viz_size = {
+                'width':600,
+                'height':400
+            };
+            var about_string = 'Zoom, scroll, and click buttons to interact with the clustergram. <a href="http://amp.pharm.mssm.edu/clustergrammer/help"> <i class="fa fa-question-circle" aria-hidden="true"></i> </a>';
+
+            // define arguments object
+            var args = {
+                root: '#container-id-1',
+                'network_data': network_data,
+                'about':about_string,
+                'row_tip_callback':hzome.gene_info,
+                'dendro_callback':dendro_callback,
+                'matrix_update_callback':matrix_update_callback,
+                'sidebar_width':100,
+                'tile_colors':['#ED9124','#1C86EE'],
+                'ini_view':{'N_row_var':20},
+                'row_order':'alpha',
+                'ini_expand':true
+            };
+
+            resize_container(args);
+
+
+
+            cgm = Clustergrammer(args);
+
+            check_setup_enrichr(cgm);
+
+            d3.select(cgm.params.root + ' .wait_message').remove();
+
+            d3.select(cgm.params.root+ ' .title_section')
+                .append('a')
+                .attr('href', window._config['ENTRY_POINT'] + '/')
+                .attr('target', '_blank')
+                .append('img')
+                .classed('title_image',true)
+                .attr('src','static/img/clustergrammer_logo.png')
+                .attr('alt','clustergrammer')
+                .style('width','150px')
+                .style('margin-left','3px')
+                .style('margin-top','5px');
+
+
+        });
+
+        function matrix_update_callback(){
+
+            if (genes_were_found[this.root]){
+                enr_obj[this.root].clear_enrichr_results(false);
+            }
+        }
+
+        function cat_update_callback(){
+            console.log('callback to run after cats are updated');
+        }
+
+        function test_tile_callback(tile_data){
+            var row_name = tile_data.row_name;
+            var col_name = tile_data.col_name;
+
+        }
+
+        function test_col_callback(col_data){
+            var col_name = col_data.name;
+        }
+
+        function dendro_callback(inst_selection){
+
+            var inst_rc;
+            var inst_data = inst_selection.__data__;
+
+            // toggle enrichr export section
+            if (inst_data.inst_rc === 'row'){
+                d3.select('.enrichr_export_section')
+                    .style('display', 'block');
+            } else {
+                d3.select('.enrichr_export_section')
+                    .style('display', 'none');
+            }
+
+        }
+
+        function resize_container(args){
+
+            var screen_width = window.innerWidth-200;
+            var screen_height = window.innerHeight - 120;
+
+            console.log(screen_width);
+            console.log(screen_height);
+
+            d3.select(args.root)
+                .style('width', '950px')
+                .style('height', '750px');
+        }
+
+
+    </script>
+
+    <div class="navbar navbar-static-top pb-2" role="navigation">
+        <div class="navbar-header mb-4" style="flex-wrap: wrap;">
+
+            <div class="pb-4">
+                <a class="navbar-brand mx-auto mb-1" href="/" style="text-decoration:none;color: white; font-size: xx-large">Molecular Tumor Subtype Classification Tool for HPV-associated Head and Neck Cancer Samples
+                </a>
+            </div>
+
+        </div>
+        <br/>
+        <br/>
+
+
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-item nav-link"  href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link"  href="/MGI-freeze3/top_hits">Contacts</a>
+                </li>
+
+
+
+            </ul>
+            <br/>
+
+        </div>
+    </nav>
+
+</head>
+<main role="main" class="container bg-white ">
+    <div class="row ">
+
+
+
+        <div class="row">
+
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">Messages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Settings</a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+
+                    <a href="{% url 'download_result' %}?foldername={{foldername}}" type="button">Download Matrix</a>
+
+
+
+                    <h3>Heatmap</h3>
+                    <title>Clustergrammer.js</title>
+
+
+                    <div id='container-id-1'>
+                        <h1 class='wait_message'>Please wait ...</h1>
+                    </div>
+
+
+                </div>
+                <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                    <div class="row">
+                    <table class="table table-striped">
+                        <tr> <td>Sample</td>
+                            <td>Predicted Subtype</td>
+                            <td>Majority Vote</td>
+                        </tr>
+
+                        {% for b in arr.itertuples %}
+
+                        <tr>
+                            <td>{{ b.1 }}</td><td> {{ b.2 }}</td><td> {{ b.3 }}</td>
+                        </tr>
+                        {% endfor %}
+
+                    </table>
+                    </div>
+                </div>
+                <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">tabpanel</div>
+                <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">setting</div>
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+</main>
 </html>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-<div>
-
-
-        <h3>Heatmap</h3>
-        <title>Clustergrammer.js</title>
-
-    <div id='container-id-1'>
-        <h1 class='wait_message'>Please wait ...</h1>
-    </div>
-
-
-
-
-
-
-
-
-
-    </div>
 
 
 

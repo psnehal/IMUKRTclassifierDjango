@@ -1,574 +1,335 @@
 
-{% extends "base.html" %}
 {% load static %}
 
-{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script src="https://cdn.plot.ly/plotly-2.9.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="shortcut icon" href="img/graham_cracker.ico"  type="image/x-icon">
 
-<script src="/js/d3.js"></script>
-<script src="/js/jquery-1.11.2.min.js"></script>
-<script src="/js/underscore-min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="{% static 'jobinput/css/font-awesome.min.css' %}">
+
+
+
+<style type="text/css">
+
+    /* Sticky footer styles
+    -------------------------------------------------- */
+    html, body {
+        max-width: 100%;
+        overflow-x:hidden;
+    }
+
+    /* Wrapper for page content to push down footer */
+    /* Negative indent footer by its height */
+    /* Pad bottom by footer height */
+    #wrap {
+        min-height: 100%;
+        min-width: 800px;
+    }
+
+    /* Set the fixed height of the footer here */
+    #footer {
+        height: 60px;
+        background-color: #f5f5f5;
+        text-align: center;
+        background-color: #f5f5f5;
+        font-size: 13px;
+        padding-left:10px;
+        padding-right:10px;
+        margin-top: 50px;
+    }
+
+    #footer_text_container{
+        margin-top: 10px;
+        margin-bottom: 0px;
+        min-width: 950px;
+    }
+
+    .clustergrammer_container{
+        width: 1140px;
+        height: 750px;
+        margin-bottom: 10px;
+        overflow: hidden;
+    }
+
+    .viz_title{
+        width: 100%;
+        font-size: 30px;
+        font-weight: 300;
+        /*margin-left: -10px;*/
+        margin-top: 10px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #DEDEDE;
+    }
+
+    .viz_description{
+        font-size: 16px;
+        font-weight: 300;
+        margin-top: 10px;
+        margin-left: 5px;
+        margin-right: 20px;
+        text-align: justify;
+        margin-bottom: 30px;
+    }
+
+</style>
+
+<script src="{% static 'jobinput/js/d3.js' %}"></script>
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script src="{% static 'jobinput/js/underscore-min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 <!-- Clustergrammer JS -->
-<script src='clustergrammer.js'></script>
+<script src="{% static 'jobinput/js/clustergrammer.js' %}"></script>
 
 <!-- optional modules -->
-<script src='js/Enrichrgram.js'></script>
-<script src='js/hzome_functions.js'></script>
-<script src='js/send_to_Enrichr.js'></script>
-
-<!-- make clustergram -->
-<script src='js/load_clustergram.js'></script>
-
-
-
-<ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#pca">PCA</a></li>
-    <li><a data-toggle="tab" href="#heatmap">Heatmap</a></li>
-    <li><a data-toggle="tab" href="#tabletab">Table</a></li>
-    <li><a data-toggle="tab" href="#plotly">Plotly</a></li>
-</ul>
-
-<div class="col-md-8">
-
-    <div class="tab-content">
-        <div id="pca" class="tab-pane fade in active">
-            <h3>PCA Plot</h3>
-
-            {% csrf_token %}
-
-
-
-
-            <img src="{% static 'jobinput/images/PCA_classification.png' %}" class="img-fluid img-thumbnail" alt="My image" max>
-        </div>
-        <div id="heatmap" class="tab-pane fade">
-            <h3>Heatmap</h3>
+<script src="{% static 'jobinput/js/Enrichrgram.js' %} "></script>
+<script src="{% static 'jobinput/js/hzome_functions.js' %}"></script>
+<script src="{% static 'jobinput/js/send_to_Enrichr.js' %}"></script>
+<script src="{% static 'jobinput/js/send_to_Enrichr.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'jobinput/main.css' %}">
+<script src="{% static 'jobinput/js/selection.js' %}"></script>
 
-        </div>
-        <style type="text/css">
 
-            /* Sticky footer styles
-            -------------------------------------------------- */
-            html, body {
-                max-width: 100%;
-                overflow-x:hidden;
-            }
 
-            /* Wrapper for page content to push down footer */
-            /* Negative indent footer by its height */
-            /* Pad bottom by footer height */
-            #wrap {
-                min-height: 100%;
-                min-width: 800px;
-            }
 
-            /* Set the fixed height of the footer here */
-            #footer {
-                height: 60px;
-                background-color: #f5f5f5;
-                text-align: center;
-                background-color: #f5f5f5;
-                font-size: 13px;
-                padding-left:10px;
-                padding-right:10px;
-                margin-top: 50px;
-            }
+<script>
+    $(function () {
+        $('#myTab li:last-child a').tab('show')
+    });
 
-            #footer_text_container{
-                margin-top: 10px;
-                margin-bottom: 0px;
-                min-width: 950px;
-            }
+    document.addEventListener('DOMContentLoaded', function() {
+        // Your JSON data
+        var network_data = {{ finaljson|safe }};
+        //var readjsonfile =   "{% static 'jobinput/media' %}/be8f318a-604d-47f6-8c2e-5d49c7283e78/mult_view.json";
 
-            .clustergrammer_container{
-                width: 1140px;
-                height: 750px;
-                margin-bottom: 10px;
-                overflow: hidden;
-            }
-
-            .viz_title{
-                width: 100%;
-                font-size: 30px;
-                font-weight: 300;
-                /*margin-left: -10px;*/
-                margin-top: 10px;
-                margin-bottom: 20px;
-                border-bottom: 1px solid #DEDEDE;
-            }
-
-            .viz_description{
-                font-size: 16px;
-                font-weight: 300;
-                margin-top: 10px;
-                margin-left: 5px;
-                margin-right: 20px;
-                text-align: justify;
-                margin-bottom: 30px;
-            }
-
-        </style>
-
-
-        </head>
-
-        <body>
-        <div id='container-id-1'>
-            <h1 class='wait_message'>Please wait ...</h1>
-        </div>
-
-
-        <script src="{% static 'jobinput/js/d3.js' %}"></script>
-        <script src="{% static 'jobinput/js/jquery-3.5.1.min.js' %}"></script>
-        <script src="{% static 'jobinput/js/underscore-min.js' %}"></script>
-        <script src="{% static 'jobinput/js/bootstrap.js' %}"></script>
-        <div id="tabletab" class="tab-pane fade">
-            <h3>Table</h3>
-            <table class="table table-striped">
-                <tr> <td>Sample</td>
-                    <td>Predicted Subtype</td>
-                    <td>Majority Vote</td>
-                </tr>
+        console.log(network_data);
 
-                {% for b in arr.itertuples %}
 
-                <tr>
-                    <td>{{ b.1 }}</td><td> {{ b.2 }}</td><td> {{ b.3 }}</td>
-                </tr>
-                {% endfor %}
 
-            </table>
+        var hzome = ini_hzome();
+        var outer_margins = {
+            'top':5,
+            'bottom':30,
+            'left':195,
+            'right':2
+        };
 
+        var viz_size = {
+            'width':600,
+            'height':400
+        };
+        var about_string = 'Zoom, scroll, and click buttons to interact with the clustergram. <a href="http://amp.pharm.mssm.edu/clustergrammer/help"> <i class="fa fa-question-circle" aria-hidden="true"></i> </a>';
 
+        // define arguments object
+        var args = {
+            root: '#container-id-1',
+            'network_data': network_data,
+            'about':about_string,
+            'row_tip_callback':hzome.gene_info,
+            'dendro_callback':dendro_callback,
+            'matrix_update_callback':matrix_update_callback,
+            'sidebar_width':100,
+             'tile_colors':['#ED9124','#1C86EE'],
+            'ini_view':{'N_row_var':20},
+            'row_order':'alpha',
+             'ini_expand':true
+        };
 
+        resize_container(args);
 
 
 
-            </table>
+        cgm = Clustergrammer(args);
 
-        </div>
-        <div id="plotly" class="tab-pane fade">
-            <h3>Heatmap</h3>
-            <title>Clustergrammer.js</title>
+        check_setup_enrichr(cgm);
 
+        d3.select(cgm.params.root + ' .wait_message').remove();
 
+        d3.select(cgm.params.root+ ' .title_section')
+            .append('a')
+            .attr('href', window._config['ENTRY_POINT'] + '/')
+            .attr('target', '_blank')
+            .append('img')
+            .classed('title_image',true)
+            .attr('src','static/img/clustergrammer_logo.png')
+            .attr('alt','clustergrammer')
+            .style('width','150px')
+            .style('margin-left','3px')
+            .style('margin-top','5px');
 
 
-            <style type="text/css">
+    });
 
-                /* Sticky footer styles
-                -------------------------------------------------- */
-                html, body {
-                    max-width: 100%;
-                    overflow-x:hidden;
-                }
+    function matrix_update_callback(){
 
-                /* Wrapper for page content to push down footer */
-                /* Negative indent footer by its height */
-                /* Pad bottom by footer height */
-                #wrap {
-                    min-height: 100%;
-                    min-width: 800px;
-                }
+        if (genes_were_found[this.root]){
+            enr_obj[this.root].clear_enrichr_results(false);
+        }
+    }
 
-                /* Set the fixed height of the footer here */
-                #footer {
-                    height: 60px;
-                    background-color: #f5f5f5;
-                    text-align: center;
-                    background-color: #f5f5f5;
-                    font-size: 13px;
-                    padding-left:10px;
-                    padding-right:10px;
-                    margin-top: 50px;
-                }
+    function cat_update_callback(){
+        console.log('callback to run after cats are updated');
+    }
 
-                #footer_text_container{
-                    margin-top: 10px;
-                    margin-bottom: 0px;
-                    min-width: 950px;
-                }
-
-                .clustergrammer_container{
-                    width: 1140px;
-                    height: 750px;
-                    margin-bottom: 10px;
-                    overflow: hidden;
-                }
-
-                .viz_title{
-                    width: 100%;
-                    font-size: 30px;
-                    font-weight: 300;
-                    /*margin-left: -10px;*/
-                    margin-top: 10px;
-                    margin-bottom: 20px;
-                    border-bottom: 1px solid #DEDEDE;
-                }
-
-                .viz_description{
-                    font-size: 16px;
-                    font-weight: 300;
-                    margin-top: 10px;
-                    margin-left: 5px;
-                    margin-right: 20px;
-                    text-align: justify;
-                    margin-bottom: 30px;
-                }
-
-            </style>
-
-
-            </head>
-
-
-            <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
-
-
-
-
-
-
-
-
-
-
-            <!-- Clustergrammer JS -->
-
-
-            <script>
-
-                $( document ).ready(function() {
-                    console.log( "ready!" );
-                    var yValues = ['CD40', 'CD4', 'IL7R', 'HLA-DQB2', 'KIT', 'FOXP3', 'NFKB2', 'BCL2', 'VIM', 'SNAI1', 'ZEB1', 'SPRR3', 'TGM1', 'CDH3', 'SFN', 'TP63', 'MAPK14', 'AKT1', 'MAOA', 'PPARD', 'CDH1', 'TJP1', 'DSG3', 'KRT16'];
-
-                    var xValues = ['HPV+1', 'X2536.KZ.25', 'X2536.KZ.23', 'X2536.KZ.18', 'X2536.KZ.16', 'X2536.KZ.14', 'HPV+9', 'HPV+4', 'HPV+3', 'HPV+7', 'X2536.KZ.7.FS', 'HPV+11', 'HPV+12', 'HPV+13', 'X2536.KZ.34.FS', 'X2536.KZ.33.FS', 'X2536.KZ.28', 'HPV+10', 'X2536.KZ.17', 'HPV+18', 'HPV+2', 'X2536.KZ.1', 'HPV+15', 'HPV+8', 'X2536.KZ.4', 'HPV+6', 'HPV+5', 'HPV+16', 'HPV+17', 'X2536.KZ.10', 'HPV+14'];
-
-                    var zValues = [
-                        [ 1.14945527e+00, -2.89340156e-01,  6.08131849e-01,
-                            4.17391232e-01, -1.57896548e-01,  1.11256845e+00,
-                            2.52180820e-01,  5.32719641e-01,  2.38983143e-01,
-                            1.10979506e+00,  1.19426954e+00,  1.19084711e+00,
-                            2.99995322e-01,  7.46706523e-01,  1.49482445e-01,
-                            1.83322615e-02,  2.36787287e-01,  2.04962609e-02,
-                            -9.23300002e-01, -1.01243414e+00,  1.22439060e-01,
-                            -8.70206424e-01, -1.06052437e+00, -5.67043228e-01,
-                            -1.30572592e+00,  1.86599143e-01, -5.34848342e-01,
-                            -1.10287734e+00, -1.05219693e+00, -1.82835083e-02,
-                            -6.92503506e-01],
-                        [ 9.61457192e-01, -1.28594158e+00,  9.40104005e-01,
-                            1.69156585e-01, -1.24286697e+00,  8.01627488e-01,
-                            -1.51536239e+00,  1.16949791e+00, -1.62269723e-01,
-                            8.13970953e-01,  1.29265983e-01,  1.70856117e+00,
-                            8.92353476e-01,  2.34452935e-01,  8.26614556e-01,
-                            9.97373412e-01,  4.33100950e-01, -9.41485704e-01,
-                            -9.52285716e-01,  2.66607666e-01,  3.76027861e-01,
-                            -2.17893294e-01, -1.12039552e+00, -2.02054338e-01,
-                            -1.12151207e+00,  1.85501615e-01, -8.24625923e-01,
-                            -5.32847425e-01, -9.77680379e-01,  7.71357746e-01,
-                            -5.79810464e-01],
-                        [ 5.10916343e-01, -8.82408268e-01, -2.94037931e-01,
-                            1.45236669e+00, -8.12501024e-01,  1.82904471e+00,
-                            -1.38027841e+00,  4.56352130e-01, -9.78267613e-01,
-                            1.23667224e+00, -4.08048380e-01,  8.82158355e-01,
-                            2.43252768e+00,  1.12593347e+00,  1.50342809e+00,
-                            -2.96454975e-02,  1.61178706e+00, -5.36093616e-02,
-                            -9.19487918e-01,  1.65986788e+00,  1.18371363e-01,
-                            -1.96839305e-01, -1.43010703e+00, -2.37804673e+00,
-                            -1.67772984e+00,  3.63150627e-02, -1.84716324e+00,
-                            5.46299696e-01, -8.59526139e-01, -5.53819519e-01,
-                            -7.00524569e-01],
-                        [ 3.93033589e-01, -1.84950746e-01,  1.73653743e+00,
-                            5.18947829e-01, -1.23794861e+00,  1.73919536e+00,
-                            -9.38276311e-01,  2.67626290e+00,  1.60155257e+00,
-                            1.11179612e+00,  2.55860282e+00,  2.33141391e+00,
-                            7.76614370e-01,  2.00902014e+00,  1.21151226e-01,
-                            -7.52882452e-01,  1.61890108e-01, -3.42828490e+00,
-                            -1.75887406e+00, -4.79729602e-01, -5.16126053e-01,
-                            -1.52168357e+00, -1.33311267e+00, -7.74184933e-01,
-                            -1.76293554e+00,  3.92147382e-01, -1.32714252e+00,
-                            -1.36036213e+00, -1.49296293e+00,  1.26264216e+00,
-                            -5.21350884e-01],
-                        [-4.72296705e-01, -6.01656902e-01,  3.34264944e-01,
-                            1.59615258e+00, -1.16973587e+00,  1.53354272e+00,
-                            -9.66264825e-01,  1.50322177e+00, -1.18832517e+00,
-                            7.01345211e-01,  1.86090797e+00,  2.13286272e-02,
-                            2.18943787e+00,  1.97767631e+00,  1.66512526e+00,
-                            -1.56078670e-01, -1.03247080e+00, -1.32222510e-01,
-                            -1.45773099e+00,  2.25023123e+00, -1.69292226e+00,
-                            -1.37457651e+00,  1.32540720e+00, -1.76906439e+00,
-                            -1.56693323e+00, -5.23001209e-01,  1.73786122e-01,
-                            -1.93334553e-01, -2.14320028e+00,  1.09252998e+00,
-                            -1.78514290e+00],
-                        [ 9.06042670e-01, -4.15049907e-01,  7.61418394e-01,
-                            3.17194181e-01, -6.91174372e-01,  1.20608994e+00,
-                            -1.12774101e+00,  8.99331487e-01,  2.99876264e-01,
-                            1.47519820e+00,  9.07775875e-01,  1.03799561e+00,
-                            5.79321960e-01,  2.24461114e-01,  7.77158565e-01,
-                            5.06268142e-01, -2.36452806e-01, -1.37843057e+00,
-                            -9.67751759e-01, -5.41080105e-01,  8.34007858e-01,
-                            2.19790629e-02, -3.97950134e-01, -5.34437645e-01,
-                            -1.55459431e+00,  3.59103309e-01, -5.55508963e-01,
-                            -4.24477838e-01, -1.29239400e+00, -4.10400067e-01,
-                            -5.85779164e-01],
-                        [ 2.04164416e-01, -9.92356638e-01,  4.00858303e-01,
-                            6.87323578e-01, -9.35150484e-01,  1.03376445e+00,
-                            1.84412881e-01,  1.31291431e+00,  1.11399649e+00,
-                            1.20004899e+00,  1.31684706e+00,  1.80069945e-01,
-                            5.22104976e-01,  6.96456688e-01,  3.25996394e-01,
-                            -1.19113972e-01, -1.15625146e-02, -1.17068186e+00,
-                            -9.46200802e-01, -6.45163542e-01, -2.14682075e-01,
-                            2.69601837e-01,  4.77034657e-02,  2.09706743e-01,
-                            -5.05671457e-01,  2.61893755e-01, -2.57324977e-01,
-                            -8.50119659e-01, -2.01047946e+00, -3.10634844e-01,
-                            -9.98721992e-01],
-                        [ 7.00274853e-02, -1.71561489e+00,  1.59147965e+00,
-                            6.51858086e-01, -1.60493794e+00,  2.19107844e+00,
-                            2.08479684e+00,  8.80253468e-01,  1.54850868e+00,
-                            1.08863678e+00,  2.47006279e+00,  4.96452746e-01,
-                            2.41373428e+00,  2.61028184e+00,  5.26325402e-01,
-                            -2.56665030e-01,  4.98980218e-01, -1.50230106e+00,
-                            -1.89108447e+00,  3.43537262e-01, -1.47976391e+00,
-                            1.10891810e-02, -1.40072009e+00, -2.30781785e+00,
-                            -1.33447765e+00, -6.88748588e-01, -1.73052614e+00,
-                            -1.58350966e+00, -1.28110784e+00, -2.27022169e-01,
-                            -4.72805865e-01],
-                        [ 3.68276879e-01,  1.20749414e+00,  9.86242753e-01,
-                            -2.60087448e-01, -5.27116328e-01,  1.10465278e+00,
-                            2.00313268e+00,  5.04355364e-01, -6.59699451e-01,
-                            6.11860423e-01,  5.45690275e-01,  6.86914445e-01,
-                            6.87754988e-01,  2.91121880e-01,  2.23995252e-01,
-                            -1.75299992e-01, -9.68359551e-02, -9.79014570e-01,
-                            -5.49450711e-01, -1.22629435e-01, -3.80313380e-01,
-                            -6.08559767e-01, -9.65254615e-01, -5.03340423e-01,
-                            -1.75761802e+00, -2.68455440e-01, -8.01744703e-01,
-                            5.27947657e-01, -7.03867648e-01,  5.57803913e-02,
-                            -4.45932022e-01],
-                        [ 7.61813332e-01,  1.07667890e+00, -9.74718320e-01,
-                            9.61249525e-01,  3.63474293e-01, -1.24163054e+00,
-                            -3.21600601e-01,  1.45965648e+00,  7.25605262e-01,
-                            1.00921515e+00, -9.40580737e-01, -2.28444053e-01,
-                            8.77578486e-01, -3.23989314e-01,  4.27147924e-01,
-                            -1.76206355e+00,  3.13827952e-01, -1.91965358e+00,
-                            3.22644293e-01, -3.56443874e-01, -6.98389127e-01,
-                            -9.34846291e-02, -2.71461575e-01, -2.75204057e-02,
-                            8.05215270e-01, -1.70275241e-01, -1.27565592e+00,
-                            1.58202623e+00, -1.15487750e+00,  1.08763980e+00,
-                            -1.29839228e-02],
-                        [ 1.26601226e+00,  1.40528185e+00,  8.90191432e-01,
-                            1.74656575e-01,  3.72308705e-01,  9.93377974e-01,
-                            5.42322886e-01,  6.69300311e-01, -8.63133786e-01,
-                            5.60628708e-01,  3.12065182e-01,  1.05110294e+00,
-                            1.07254979e+00,  7.29806368e-01, -1.44554493e+00,
-                            1.54680411e-01,  3.28382785e-01, -4.37965906e-01,
-                            -8.71464608e-01, -3.37776792e-01, -6.52426785e-01,
-                            -8.42975716e-03, -9.94473241e-01, -7.59290343e-01,
-                            -7.73063323e-01, -1.75052530e-01, -1.25518859e+00,
-                            1.08334146e+00, -1.17365256e+00, -1.32472366e+00,
-                            -5.33822829e-01],
-                        [-7.42037305e-01, -9.15443086e+00, -1.08704004e+00,
-                            -1.72682415e+00, -5.72689088e+00,  3.65019869e+00,
-                            -4.00720081e+00, -1.66781344e+00, -4.76617114e+00,
-                            -7.41258658e+00,  2.96918415e-01,  5.22098391e-02,
-                            4.68848062e-01, -5.65096887e+00,  3.83863467e+00,
-                            1.67456302e+00,  2.20953652e+00,  2.17478501e+00,
-                            3.87860376e+00,  2.31553619e-01,  1.92603467e+00,
-                            2.18703034e+00,  1.11091779e+00, -1.74438914e+00,
-                            1.96248803e+00,  4.45305557e+00,  4.09086875e-01,
-                            4.63204567e+00,  3.94442168e+00,  7.91839194e-01,
-                            3.79358178e+00],
-                        [-8.99956588e-01, -2.64856606e+00, -8.18459220e-01,
-                            -1.04195190e+00, -2.56075474e+00,  1.74088908e+00,
-                            -2.04161344e+00, -9.73977430e-01, -3.22212332e+00,
-                            -3.36852401e+00, -2.28354495e+00, -3.07400554e-01,
-                            -1.43374661e+00, -4.11289580e+00,  1.83229801e+00,
-                            1.65777222e+00,  1.94810152e+00,  1.88652810e+00,
-                            2.42196529e+00, -4.23004668e-01,  5.62727835e-01,
-                            1.81980552e+00,  2.41299967e+00,  1.65156904e+00,
-                            -3.90021712e-01,  7.82923514e-01,  1.76742318e+00,
-                            3.15630572e+00,  2.66914045e+00, -6.58225319e-01,
-                            8.74317163e-01],
-                        [-4.78364350e-01,  7.55363034e-01, -5.85374987e-01,
-                            -5.21497562e-01,  8.18438131e-01, -1.58642805e+00,
-                            -6.01545043e-01, -1.33052963e+00, -6.85743936e-01,
-                            -1.55356554e+00, -2.42165577e+00, -3.83321145e-01,
-                            -8.24111628e-01, -1.50104740e+00,  6.29032128e-01,
-                            -3.01725849e-01,  8.10882837e-01,  3.92317491e-01,
-                            1.29364914e+00,  8.86235936e-01,  9.35766995e-02,
-                            8.76430483e-01,  1.58352239e+00,  2.06888734e+00,
-                            5.57488223e-01, -2.32509995e-01,  1.15732396e+00,
-                            4.49647159e-01, -1.24567826e-02, -2.48045263e-02,
-                            6.71887222e-01],
-                        [-4.68417836e-01,  9.25938727e-01, -7.81300829e-01,
-                            -4.10462378e-01,  1.48235528e+00, -1.58510722e+00,
-                            -2.72343397e+00, -1.72929049e-01, -1.14957088e+00,
-                            -1.02867449e+00, -1.61254559e+00, -1.36822651e+00,
-                            -1.08711312e+00, -2.24719314e+00,  1.11056622e+00,
-                            1.83481443e-01,  1.00674669e+00,  6.48789901e-01,
-                            1.42911407e+00,  4.91279590e-01,  4.37444145e-01,
-                            1.06868195e-01,  1.48883004e+00,  1.31304022e+00,
-                            -1.52892370e+00,  7.97180379e-01,  1.43929643e+00,
-                            1.28458286e+00,  1.03998671e+00,  7.90581689e-02,
-                            8.99339654e-01],
-                        [-1.14193222e+00,  1.16067376e+00,  1.48175138e-01,
-                            -9.03973745e-01,  1.12508214e+00, -9.83759170e-01,
-                            -9.28066017e-01,  5.39839025e-01, -1.04756662e+00,
-                            -7.24930919e-01, -1.24157877e+00, -5.35521142e-01,
-                            -1.29431220e+00, -3.38893041e-01, -2.49130260e-01,
-                            -4.44201570e-01, -2.24607052e-02,  1.14797617e+00,
-                            8.75536539e-01,  1.02252599e+00,  4.27208840e-01,
-                            3.00912627e-02,  1.10223659e+00,  1.56202360e-02,
-                            7.70215451e-01, -4.99822298e-01, -1.13311638e-02,
-                            6.87864548e-01,  1.12933018e+00, -9.24210053e-02,
-                            2.77524971e-01],
-                        [-3.14612292e-02,  9.92609045e-02,  1.28718599e-01,
-                            -5.13090624e-01, -1.15470031e-01,  4.49987738e-01,
-                            2.15063349e-01, -9.23437023e-01, -1.84807743e-01,
-                            -7.79202601e-01, -4.50015191e-01, -9.88209587e-02,
-                            2.82555991e-01, -2.92854450e-02, -1.14324473e-01,
-                            5.39694083e-01,  2.57836935e-01,  1.40761948e-01,
-                            4.01734853e-01,  4.31018665e-01,  9.09615668e-02,
-                            -3.66394564e-01,  4.06380664e-03, -3.02052916e-01,
-                            -3.70479280e-01,  6.13236247e-03,  1.65029710e-01,
-                            1.44884423e-01,  2.33260348e-01, -3.34590622e-03,
-                            6.91222703e-01],
-                        [-3.46743288e-01,  3.09844697e-01, -4.19826979e-01,
-                            3.86063602e-01,  4.47999360e-01, -6.74291057e-01,
-                            -6.38503837e-02, -3.29527018e-01,  2.30594141e-01,
-                            -4.75169121e-01, -9.43823652e-01,  2.49456947e-02,
-                            -4.18360555e-01, -6.72582819e-01, -1.04026558e-01,
-                            1.10346099e-01,  8.87499384e-02, -5.95707031e-04,
-                            4.94001362e-02, -2.56273579e-01,  1.56168202e-01,
-                            2.66766710e-01,  3.68182766e-01,  6.55134145e-01,
-                            5.10028189e-01,  3.47274662e-01,  8.91028097e-01,
-                            -7.32216056e-01,  2.98744877e-01, -5.76586836e-02,
-                            3.53674137e-01],
-                        [-5.84709454e-01,  6.59427390e-01, -1.34177777e+00,
-                            2.94042663e-02,  3.35017321e-01, -1.73724658e+00,
-                            -3.27437921e+00, -3.08492215e+00, -1.75807333e-01,
-                            -2.32232750e+00, -1.12722749e+00, -3.82420287e-02,
-                            -9.82110597e-02, -1.52391205e+00,  1.73176146e+00,
-                            3.85724195e-01,  8.25216915e-01,  1.14504230e+00,
-                            1.53294208e+00,  2.08468197e+00,  1.48257228e+00,
-                            -2.45625852e-02,  8.33629113e-01,  7.00318189e-01,
-                            -2.37144705e+00,  7.02486999e-01,  6.24443376e-01,
-                            4.47717323e-01,  1.46584238e+00,  1.60186070e+00,
-                            1.11668402e+00],
-                        [ 3.21445518e-01,  6.15082636e-01, -4.29353027e-01,
-                            -3.69532412e-01,  3.01660255e-01, -3.58770676e-01,
-                            -2.06154271e-01, -7.24339821e-01, -5.58389270e-02,
-                            -1.21594476e+00, -1.26218151e+00, -3.07730517e-01,
-                            -7.44482849e-01, -8.22451505e-01,  2.65789133e-01,
-                            -7.01279708e-01,  3.55995559e-01, -1.26577023e-01,
-                            9.12328852e-01, -3.43140223e-01,  3.54159888e-01,
-                            8.18417649e-01,  4.07488089e-01,  1.28685106e+00,
-                            6.65224580e-01,  3.63638834e-01,  4.65933040e-01,
-                            -6.67591625e-02, -7.69277491e-02, -7.40046262e-01,
-                            1.41749530e+00],
-                        [-9.68872446e-01,  7.78399798e-02, -2.25705751e-02,
-                            -8.04007541e-01,  8.44954374e-01, -1.23583632e+00,
-                            -2.30018435e-01, -1.23174627e+00, -5.65117272e-01,
-                            -8.49359748e-01, -1.57126597e+00, -5.02169879e-01,
-                            -3.95207460e-01, -1.11247251e+00, -6.06779594e-02,
-                            1.08321485e-01,  5.18362460e-01,  3.70100775e-01,
-                            9.29192996e-01,  6.28931402e-01, -1.05196772e-01,
-                            3.36057530e-01,  7.80061969e-01,  3.59202004e-01,
-                            9.57956122e-01, -1.25985109e-01,  8.45985027e-01,
-                            1.33888322e+00,  9.42972449e-02,  8.89064366e-02,
-                            1.50145124e+00],
-                        [-2.60372797e-01,  2.00991315e-01, -8.09882865e-02,
-                            -7.86567841e-01, -4.90709239e-01, -6.17457275e-01,
-                            -1.03139483e-01, -1.05231373e+00, -1.01942543e+00,
-                            -2.19947067e-01, -1.80619387e+00, -4.66224699e-01,
-                            -2.58105783e-01, -3.06492074e+00,  8.49152467e-01,
-                            5.16476281e-01,  1.97106611e-01,  3.07176975e-01,
-                            9.81167020e-01,  8.51005515e-01,  2.47917328e-01,
-                            9.53679560e-01,  1.13088800e+00,  7.17354339e-01,
-                            8.15820319e-02,  6.92556841e-01,  4.52818882e-01,
-                            4.48876518e-01,  7.48917792e-01,  1.72271052e-01,
-                            6.76427715e-01],
-                        [-1.01524825e+00, -3.40560441e-01, -1.27599285e-01,
-                            -1.36498097e+00, -1.70608406e-01, -2.26018827e+00,
-                            -4.21738263e+00, -8.86145529e-01, -1.57685758e+00,
-                            -1.04855465e+00, -2.29304896e+00, -2.11570638e+00,
-                            -4.71616957e-01, -1.64180400e+00,  1.65785740e+00,
-                            1.89122007e+00,  1.80834942e-01,  1.00908562e+00,
-                            1.92047759e+00,  1.69014822e+00, -1.17237212e-01,
-                            1.14827725e+00,  1.35480806e+00,  1.40770831e+00,
-                            -9.93395353e-01, -3.75935116e-01,  1.87145115e+00,
-                            1.40421751e+00,  1.68169006e+00,  1.49467564e+00,
-                            2.30441815e+00],
-                        [ 7.75293244e-01,  2.52617182e+00, -1.84078526e+00,
-                            -1.06203722e-01,  2.78148504e+00, -3.21303417e+00,
-                            -1.70552210e+00, -1.40851944e+00, -3.87858950e+00,
-                            -1.53040893e+00, -2.89294709e+00, -2.17629040e+00,
-                            -2.41830646e+00, -3.05236302e+00,  2.73052131e+00,
-                            -5.78541655e-01, -1.46017712e+00,  2.50431939e-01,
-                            2.62665338e+00,  2.83414397e+00, -1.78869374e+00,
-                            6.91896277e-01,  1.78189911e+00,  2.91548618e+00,
-                            -9.99631348e-02,  2.39416314e-01,  1.24966719e+00,
-                            3.62187473e+00,  2.21359747e+00,  2.25289368e-01,
-                            6.86518401e-01]
-
-                    ];
-
-
-                    var data = [{
-                        x: xValues,
-                        y: yValues,
-                        z: zValues,
-                        type: 'heatmap'
-
-                    }];
-
-                    var layout = {
-                        title: 'Annotated Heatmap',
-                        annotations: [],
-                        xaxis: {
-                            ticks: '',
-                            side: 'top'
-                        },
-                        yaxis: {
-                            ticks: '',
-                            ticksuffix: ' ',
-                            width: 700,
-                            height: 700,
-                            autosize: false
-                        }
-                    };
-
-
-
-                    Plotly.newPlot('myDiv', data, layout);
-                });
-
-
-
-
-            </script>
+    function test_tile_callback(tile_data){
+        var row_name = tile_data.row_name;
+        var col_name = tile_data.col_name;
 
+    }
+
+    function test_col_callback(col_data){
+        var col_name = col_data.name;
+    }
+
+    function dendro_callback(inst_selection){
+
+        var inst_rc;
+        var inst_data = inst_selection.__data__;
+
+        // toggle enrichr export section
+        if (inst_data.inst_rc === 'row'){
+            d3.select('.enrichr_export_section')
+                .style('display', 'block');
+        } else {
+            d3.select('.enrichr_export_section')
+                .style('display', 'none');
+        }
+
+    }
+
+    function resize_container(args){
+
+        var screen_width = window.innerWidth-200;
+        var screen_height = window.innerHeight - 120;
+
+        console.log(screen_width);
+        console.log(screen_height);
+
+        d3.select(args.root)
+            .style('width', '950px')
+            .style('height', '750px');
+    }
+
+
+</script>
+
+<div class="navbar navbar-static-top pb-2" role="navigation">
+    <div class="navbar-header mb-4" style="flex-wrap: wrap;">
+
+        <div class="pb-4">
+            <a class="navbar-brand mx-auto mb-1" href="/" style="text-decoration:none;color: white; font-size: xx-large">Molecular Tumor Subtype Classification Tool for HPV-associated Head and Neck Cancer Samples
+            </a>
         </div>
 
     </div>
-    <script>
-        $(function () {
-            $('#myTab li:last-child a').tab('show')
-        })
-    </script>
+    <br/>
+    <br/>
+
+
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-item nav-link"  href="/about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-item nav-link"  href="/MGI-freeze3/top_hits">Contacts</a>
+            </li>
+
+
+
+        </ul>
+        <br/>
+
+    </div>
+</nav>
+
+</head>
+<body>
+
+
+<main role="main" class="container bg-white ">
+    <div class="row ">
+
+
+        <div class="row">
+
+
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Heatmap</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Table</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">PCA images</a>
+                </li>
+
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <a href="{% url 'download_result' %}?foldername={{foldername}}" type="button">Download Matrix</a>
+
+
+
+                    <h3>Heatmap</h3>
+                    <title>Clustergrammer.js</title>
+
+
+                    <div id='container-id-1'>
+                        <h1 class='wait_message'>Please wait ...</h1>
+                    </div>
+
+
+                </div>
+                <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+
+                    <table class="table table-striped">
+                        <tr> <td>Sample</td>
+                            <td>Predicted Subtype</td>
+                            <td>Majority Vote</td>
+                        </tr>
+
+                        {% for b in arr.itertuples %}
+
+                        <tr>
+                            <td>{{ b.1 }}</td><td> {{ b.2 }}</td><td> {{ b.3 }}</td>
+                        </tr>
+                        {% endfor %}
+
+                    </table>
+                </div>
+                <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">
+                    <h3>PCA Plot</h3>
+
+                    {% csrf_token %}
+                    <img src="{% static 'jobinput/media/' %}{{foldername}}/PCA_classification.png">
+
+                    <img src="{% static 'jobinput/media/' %}{{foldername}}/PCA_classification_result_of_IMU_KRT.png">
+
+
+
+                </div>
+            </div>
 
 
 
 
 
 
-    {% endblock content %}
 
 
 
@@ -576,4 +337,11 @@
 
 
 
+
+
+
+</div>
+    </div>
+</main>
+</body>
 

@@ -1,0 +1,26 @@
+		Sample ID: X2536.KZ.1.FS.count	Sample ID: X2536.KZ.10.FS.count
+		Subtype: IMU	Subtype: KRT
+Genes: CD40	Pathways: immune response	-0.42231042397586993	0.42231042397586993
+Genes: CD4	Pathways: immune response	-0.4473507395088294	0.4473507395088303
+Genes: IL7R	Pathways: immune response	0.14938940138967993	-0.14938940138967993
+Genes: HLA-DQB2	Pathways: immune response	-1.3382568174092202	1.3382568174092198
+Genes: KIT	Pathways: immune response	-1.1543365625298851	1.1543365625298851
+Genes: FOXP3	Pathways: immune response	0.1831919369989201	-0.1831919369989201
+Genes: NFKB2	Pathways: immune response	0.2746369869508598	-0.2746369869508598
+Genes: BCL2	Pathways: immune response	0.1023437605386599	-0.1023437605386599
+Genes: VIM	Pathways: Mesenchymal differentiation	-0.2511366736481353	0.2511366736481353
+Genes: SNAI1	Pathways: Mesenchymal differentiation	-0.5610539727405799	0.5610539727405799
+Genes: ZEB1	Pathways: Mesenchymal differentiation	0.5597175769580449	-0.5597175769580449
+Genes: SPRR3	Pathways: Mesenchymal differentiation	0.6810109040213543	-0.6810109040213552
+Genes: TGM1	Pathways: Keratinization	1.1968993227997453	-1.1968993227997444
+Genes: CDH3	Pathways: Keratinization	0.4180173561115197	-0.4180173561115197
+Genes: SFN	Pathways: Keratinization	0.0027678312904342306	-0.0027678312904351188
+Genes: TP63	Pathways: Keratinization	0.052899315141845094	-0.052899315141845094
+Genes: MAPK14	Pathways: Keratinization	-0.2044560304790899	0.2044560304790899
+Genes: AKT1	Pathways: Oxidation-reduction process	0.137699908896745	-0.137699908896745
+Genes: MAOA	Pathways: Oxidation-reduction process	-0.7395853901511655	0.7395853901511646
+Genes: PPARD	Pathways: Oxidation-reduction process	0.7610283680777901	-0.7610283680777901
+Genes: CDH1	Pathways: Oxidation-reduction process	0.11364669827458052	-0.11364669827458052
+Genes: TJP1	Pathways: cell adhension	0.3798518361392045	-0.3798518361392045
+Genes: DSG3	Pathways: cell adhension	-0.1908528870397017	0.19085288703969994
+Genes: KRT16	Pathways: cell adhension	0.22529957612739082	-0.22529957612738993
