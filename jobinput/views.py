@@ -5,6 +5,7 @@ from io import BytesIO
 from zipfile import ZipFile
 
 from django.http import HttpResponse
+from django.http import FileResponse
 from django.http import JsonResponse
 
 from django.shortcuts import redirect
@@ -82,18 +83,43 @@ def download_result(request):
     zip_file = ZipFile(file_blueprint, 'a')
 
 #create the full path to the folder you want to download the files from
-
+    filenames = ['cpm_input_classifier_no_batchre.csv','cpm_input_classifier.csv','heatmap_data.txt','predict_result.txt','PCA_classification_result_of_IMU_KRT.png','heatmap_for_clustering_result.png']
 
     for filename in os.listdir(folderpath):
         try:
             #characterize the from path and the destination path as first and second argument
-            zip_file.write(os.path.join(folderpath + "/" + filename), os.path.join(folderpath + "/" + filename))
+            if filename in filenames:
+                zip_file.write(os.path.join(folderpath + "/" + filename), arcname=filename)
         except Exception as e:
             print(e)
     zip_file.close()
     response = HttpResponse(file_blueprint.getvalue(), content_type = "application/x-zip-compressed")
-    response["Content-Disposition"] = "attachment; filename= your-zip-folder-name.zip"
+    response["Content-Disposition"] = "attachment; filename= subtype_classified_results.zip"
     return response
+
+def downloadgeneset(request):
+    filename = request.GET.get('filename')
+    file_save_path = os.path.join(settings.STATIC_ROOT, filename )
+    # Set the mime type
+    mime_type, _ = mimetypes.guess_type(file_save_path)
+    print (filename)
+    # Set the return value of the HttpResponse
+
+    if(filename=="sample.csv"):
+
+        response = HttpResponse(file_save_path, content_type='csv')
+        # Set the HTTP header for sending to browser
+        response['Content-Disposition'] = "attachment; filename=%s" , filename
+    else:
+        print("inside xlsl loop ")
+        response = FileResponse(open(file_save_path, 'rb'), content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename="example.xlsx"'
+
+
+
+    return response
+
+
 
 
 def download_file(request):
@@ -278,12 +304,27 @@ def jobsubmit(request):
             with open(pcaf) as jsonFile:
                 pcadata = json.load(jsonFile)
         else:
-            print("its in th else loop")
+            #print("its in th else loop")
             response = redirect('DisplayError')
-    #print(res)
+    keytotal= 0
+    valuetotal=0
+    for (k, v) in pcadata.items():
+        print("Key: " + k)
+        if(k != "PCA"):
+            keytotal = keytotal+int(k)
+            valuetotal= valuetotal+v
+            print("Value: " + str(v))
+
+    print("keytotal",keytotal)
+    print("valuetotal",valuetotal)
+    finalno=  round((valuetotal*100)/keytotal,2)
+    print("finalno: " + str(finalno))
+    finalstringno = str(valuetotal)+" out of "+str(keytotal)
 
 
-    return JsonResponse({"foldername": folder,"res":res,"pcajson":pcadata,"batchremovalornot":batchremovalornot,outputfile:outputfile})
+
+
+    return JsonResponse({"foldername": folder,"res":res,"pcajson":pcadata,"batchremovalornot":batchremovalornot,outputfile:outputfile,"finalperc":finalstringno})
 
 
 def runstepone(request):
@@ -356,10 +397,24 @@ def runstepone(request):
     else:
         print("its in th else loop")
         response = redirect('DisplayError')
+        keytotal= 0
+    valuetotal=0
+    for (k, v) in pcadata.items():
+        print("Key: " + k)
+        if(k != "PCA"):
+            keytotal = keytotal+int(k)
+            valuetotal= valuetotal+v
+            print("Value: " + str(v))
+
+    print("keytotal",keytotal)
+    print("valuetotal",valuetotal)
+    finalno= round((valuetotal*100)/keytotal,2)
+    finalstringno = str(valuetotal)+"/"+str(keytotal)
+    print("finalno run step2: " + str(finalno))
 
 
 
-    return JsonResponse({"foldername": foldername,"res":res,"pcajson":pcadata,"batchremovalornot":batchremovalornot,outputfile:outputfile})
+    return JsonResponse({"foldername": foldername,"res":res,"pcajson":pcadata,"batchremovalornot":batchremovalornot,outputfile:outputfile,"finalperc":finalstringno})
 
 
 

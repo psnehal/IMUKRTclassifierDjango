@@ -125,7 +125,7 @@
             'width':600,
             'height':400
         };
-        var about_string = 'Zoom, scroll, and click buttons to interact with the clustergram. <a href="http://amp.pharm.mssm.edu/clustergrammer/help"> <i class="fa fa-question-circle" aria-hidden="true"></i> </a>';
+        var about_string = "Subtypeclassifier heatmap";
 
         // define arguments object
         var args = {
@@ -135,7 +135,7 @@
             'row_tip_callback':hzome.gene_info,
             'dendro_callback':dendro_callback,
             'matrix_update_callback':matrix_update_callback,
-            'sidebar_width':100,
+            'sidebar_width':150,
              'tile_colors':['#ED9124','#1C86EE'],
             'ini_view':{'N_row_var':20},
             'row_order':'alpha',
@@ -213,8 +213,8 @@
         console.log(screen_height);
 
         d3.select(args.root)
-            .style('width', '950px')
-            .style('height', '750px');
+            .style('width', '1050px')
+            .style('height', '850px');
     }
 
 
@@ -240,10 +240,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item active">
+                <a class="nav-item nav-link"  href="/">Home</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-item nav-link"  href="/about">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-item nav-link"  href="/MGI-freeze3/top_hits">Contacts</a>
+                <a class="nav-item nav-link"  href="/downloadgeneset?filename=geneset.xlsx" download>Download Training Gene lists</a>
             </li>
 
 
@@ -295,8 +298,8 @@
 
                 </div>
                 <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-
-
+                    <br/><br/>
+                    <h3>Predict Results </h3>
                     <table class="table table-striped">
                         <tr> <td>Sample</td>
                             <td>Predicted Subtype</td>
@@ -317,11 +320,7 @@
 
                     {% csrf_token %}
                     <img src="{% static 'jobinput/media/' %}{{foldername}}/PCA_classification.png">
-
-                    <img src="{% static 'jobinput/media/' %}{{foldername}}/PCA_classification_result_of_IMU_KRT.png">
-
-
-
+                    <figure><img src="{% static 'jobinput/media/' %}{{foldername}}/PCA_classification_result_of_IMU_KRT.png" class="img-fluid"></figure>
                 </div>
             </div>
 

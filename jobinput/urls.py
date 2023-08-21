@@ -25,6 +25,7 @@ urlpatterns = [
     path('jobsubmit/', jobsubmit, name='jobsubmit'),
     path('runstepone/', runstepone, name='runstepone'),
     path('runclassifier',views.runclassifier, name='runclassifier'),
+    path('downloadgeneset',views.downloadgeneset, name='downloadgeneset'),
     path('clustergramheatmap',views.clustergramheatmap, name='clustergramheatmap'),
     path('heatmap', views.heatmap, name='heatmap'),
     path('about', views.about, name='about'),

@@ -139,7 +139,7 @@ STATICFILES_DIRS = (str(BASE_DIR.joinpath('static')),) # new
 
 RSCRIPT_PATH = '/Users/snehalpatil/Documents/GithubProjects/ShitingProject/tumourclass/jobinput/static/jobinput/'
 PYTHONSCRIPT_PATH = '/Users/snehalpatil/Documents/GithubProjects/ShitingProject/tumourclass/jobinput/python_script'
-
+#PYTHONSCRIPT_PATH ='/var/home/serviceuser/tumourclassProject/IMUKRTclassifierDjango/jobinput/python_script'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
@@ -156,8 +156,8 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # MEDIA_URL = '/media/'
 # MEDIA_ROOT = '/var/www/subtypeclassifier/static/jobinput/media/'
-# #STATIC_ROOT = i#os.path.join(BASE_DIR, 'static/')
-# STATIC_ROOT = "/var/www/subtypeclassifier/static"
+# #STATIC_ROOT = i#os.path.join(BASE_DIR, 'static/
+STATIC_ROOT = "/Users/snehalpatil/Documents/GithubProjects/ShitingProject/tumourclass/jobinput/static/jobinput/"
 #
 # RSCRIPT_PATH = '/var/www/subtypeclassifier/static/jobinput/'
 # RSCRIPT_PATH = '/Users/snehalpatil/Documents/GithubProjects/ShitingProject/tumourclass/jobinput/static/jobinput/'
