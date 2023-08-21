@@ -1,3 +1,0 @@
-0	1	2
-X2536.KZ.1.FS.count	IMU	8;7  
-X2536.KZ.10.FS.count	KRT	14;1 
