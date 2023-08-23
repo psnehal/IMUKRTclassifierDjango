@@ -4418,7 +4418,6 @@
       <change afterPath="$PROJECT_DIR$/../../EncoreOriginal/venv/lib/python3.8/site-packages/werkzeug/wrappers/user_agent.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../EncoreOriginal/venv/lib/python3.8/site-packages/werkzeug/wsgi.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../EncoreOriginal/venv/pyvenv.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jobinput/static/sample.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../CoronoBramarsProject/covidproject/covidproject/src/main/groovy/covidproject/org/DataValidator.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LRPath/robinhood/buttons.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../LRPath/robinhood/buttons.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LRPath/robinhood/inputsentence.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../LRPath/robinhood/inputsentence.py" afterDir="false" />
@@ -4426,6 +4425,7 @@
       <change beforePath="$PROJECT_DIR$/../../LRPath/robinhood/parse_.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../LRPath/robinhood/parse_.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LRPath/robinhood/thetawarrior.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../LRPath/robinhood/thetawarrior.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LRPath/robinhood/tweeterParse.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../LRPath/robinhood/tweeterParse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jobinput/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/forms.py" afterDir="false" />
@@ -4438,15 +4438,8 @@
       <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/json/mult_view.json" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/json/mult_view.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jobinput/static/main.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/jobinput/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobinput/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/clustergramheatmap.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clustergramheatmap.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/heatmap.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/heatmap.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/jobsubmit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/jobsubmit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/runclassifier.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/runclassifier.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tumourclass/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/tumourclass/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../pheweb/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../pheweb/command_line.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../pheweb/conf_utils.py" beforeDir="false" />
@@ -4547,11 +4540,11 @@
     <window id="1">
       <content type="file-editors">
         <state>
-          <leaf>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/templates/clustergramheatmap.html">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="-1435">
+                  <state relative-caret-position="23">
                     <caret line="141" column="52" selection-start-line="141" selection-start-column="52" selection-end-line="141" selection-end-column="52" />
                     <folding>
                       <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
@@ -4572,8 +4565,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jobinput/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="96" column="80" selection-start-line="96" selection-start-column="80" selection-end-line="96" selection-end-column="80" />
+            <state relative-caret-position="303">
+              <caret line="131" column="95" lean-forward="true" selection-start-line="131" selection-start-column="71" selection-end-line="131" selection-end-column="95" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -4584,7 +4577,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/runclassifier.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
+            <state relative-caret-position="7498">
               <caret line="326" selection-start-line="326" selection-end-line="326" />
             </state>
           </provider>
@@ -4614,7 +4607,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
+            <state relative-caret-position="1150">
               <caret line="50" column="17" selection-start-line="42" selection-start-column="11" selection-end-line="50" selection-end-column="17" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -4648,13 +4641,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="402" column="26" selection-start-line="402" selection-start-column="26" selection-end-line="402" selection-end-column="26" />
+            <state relative-caret-position="280">
+              <caret line="409" column="60" selection-start-line="409" selection-start-column="48" selection-end-line="409" selection-end-column="60" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#td#1;n#tr#0;n#table#0;n#div#0;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -4774,7 +4764,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="x" value="-1832" />
     <option name="y" value="-3" />
     <option name="width" value="1644" />
@@ -5001,18 +4991,18 @@
       <workItem from="1690779271531" duration="5773000" />
       <workItem from="1691416706182" duration="4674000" />
       <workItem from="1692021556632" duration="4856000" />
-      <workItem from="1692627887395" duration="3053000" />
+      <workItem from="1692627887395" duration="4025000" />
+      <workItem from="1692803856857" duration="260000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="356084000" />
+    <option name="totallyTimeSpent" value="357316000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1832" y="-3" width="1644" height="1027" extended-state="0" />
-    <editor active="true" />
+    <frame x="-1920" y="-34" width="1920" height="1080" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16058394" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1375" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -5029,7 +5019,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info active="true" anchor="bottom" x="-1864" y="172" width="1848" height="747" id="Terminal" order="10" sideWeight="0.9057178" visible="true" weight="0.42658094" />
+      <window_info active="true" anchor="bottom" x="-1864" y="172" width="1848" height="747" id="Terminal" order="10" sideWeight="0.9057178" visible="true" weight="0.39484128" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.09428224" side_tool="true" weight="0.43837085" />
       <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -5183,12 +5173,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/media/fb507062-fab7-492d-a262-202dff2d18caPCA_related.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/media/e0133866-9119-4e80-a7db-95ec9eb4b3d1PCA_related.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/media/fb507062-fab7-492d-a262-202dff2d18caPCA_related.json" />
+    <entry file="file://$PROJECT_DIR$/media/e0133866-9119-4e80-a7db-95ec9eb4b3d1PCA_related.json" />
     <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/js/hzome_functions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1725">
@@ -5303,12 +5289,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/runclassifier.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7498">
+          <caret line="326" selection-start-line="326" selection-end-line="326" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/css/font-awesome.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/jobinput/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="552">
           <caret line="27" column="71" selection-start-line="27" selection-start-column="71" selection-end-line="27" selection-end-column="71" />
           <folding>
             <element signature="e#636#664#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1150">
+          <caret line="50" column="17" selection-start-line="42" selection-start-column="11" selection-end-line="50" selection-end-column="17" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -5355,7 +5366,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/clustergramheatmap.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1435">
+        <state relative-caret-position="23">
           <caret line="141" column="52" selection-start-line="141" selection-start-column="52" selection-end-line="141" selection-end-column="52" />
           <folding>
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
@@ -5365,48 +5376,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="50" column="17" selection-start-line="42" selection-start-column="11" selection-end-line="50" selection-end-column="17" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jobinput/static/jobinput/css/font-awesome.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="402" column="26" selection-start-line="402" selection-start-column="26" selection-end-line="402" selection-end-column="26" />
+        <state relative-caret-position="280">
+          <caret line="409" column="60" selection-start-line="409" selection-start-column="48" selection-end-line="409" selection-end-column="60" />
           <folding>
             <element signature="n#style#0;n#div#2;n#td#1;n#tr#0;n#table#0;n#div#0;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/runclassifier.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="326" selection-start-line="326" selection-end-line="326" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jobinput/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="96" column="80" selection-start-line="96" selection-start-column="80" selection-end-line="96" selection-end-column="80" />
+        <state relative-caret-position="303">
+          <caret line="131" column="95" lean-forward="true" selection-start-line="131" selection-start-column="71" selection-end-line="131" selection-end-column="95" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
           </folding>
