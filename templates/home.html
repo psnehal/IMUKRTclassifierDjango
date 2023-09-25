@@ -249,21 +249,25 @@
                              foldename = response.foldername;
                              batchremovalornot= response.batchremovalornot;
                              finalperc= response.finalperc;
+                             pcajson1 = response.pcajson;
+                             parsedData = JSON.stringify(pcajson1);
+                             parsedObject = JSON.parse(parsedData);
+                             warning = parsedObject.warning;
+                             console.log(warning);
 
                             if(res == 1)
                             {
                                 document.getElementById("mybox").innerHTML = "Sorry job failed . Contact admin for more details";}
                         },
                         complete: function () {
-                            console.log("its in the complete log");
+
 
                             if(batchremovalornot == 'combat')
                             {
                                 setTimeout(function(){
                                     //$('.progress-bar').css({width: "50%"});
                                     setTimeout(function(){
-                                    var testsen='<p>Preprocessing step 1 is done and running the Preprocessing step 2 </p>'
-                                    +'<div class="progress"><div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div></div>';
+                                    var testsen='<p>Preprocessing step 1 is done and running the Preprocessing step 2 </p>'+'<div class="progress"><div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div></div>';
 
                                         document.getElementById("mybox").innerHTML = testsen;
                                         console.log("i m in 50%");
@@ -281,8 +285,17 @@
 
                                 var downloadUrl = '/downloadfile?uuid='+foldename+"&batchr="+batchremovalornot;
                                 var linkText = 'Download Matrix';
-                                console.log("link is",downloadUrl);
-                                var anchorElement = '<hr>Total '+finalperc+' genes matched.<br/> Download log2cpmmatrix matrix created in step1 here: <a href='+downloadUrl+' type="button">'+linkText+'</a>';
+                                var anchorElement ='';
+
+                                if(warning == 0)
+                                {
+
+                                    anchorElement += "<p class=\"text-warning\">\"Warnings: Less than 30% of genes used for training detected, the classifier may generate bias results! ;\"</p>"
+                                }
+
+                                anchorElement += '<hr>Total '+finalperc+' genes matched.<br/> Download log2cpmmatrix matrix created in step1 here: <a href='+downloadUrl+' type="button">'+linkText+'</a>';
+
+
                                 var downloadLinkContainer = document.getElementById('outputfile');
                                 downloadLinkContainer.innerHTML = anchorElement;
 
@@ -296,7 +309,7 @@
                                     '<div class="form-group  m-4"><b>' +
                                     '<form action="runclassifier" id="step2form" method="GET">' +
 
-                                    '<div class="col-lg-11 col-md-11 col-sm-11 text-center">\n' +
+                                    '<div class="col-lg-12 col-md-12 col-sm-12 text-center">\n' +
                                     '<label class="p-2"> Step 2 : Run Subtype Classification</label>\n' +
                                     '<br>' +
 
@@ -392,6 +405,11 @@
                             foldename = response.foldername;
                             batchremovalornot= response.batchremovalornot;
                             finalperc= response.finalperc;
+                            pcajson1 = response.pcajson;
+                            parsedData = JSON.stringify(pcajson1);
+                            parsedObject = JSON.parse(parsedData);
+                            warning = parsedObject.warning;
+                            console.log("warning",warning);
 
                             if(res == 1)
                             {
@@ -402,15 +420,17 @@
 
                         },
                         complete: function () {
-                            console.log("its in the complete log");
-
-                            console.log("batchremovalornot",batchremovalornot);
-                            console.log("foldename",foldename);
-
                             var downloadUrl = '/downloadfile?uuid='+foldename+"&batchr="+batchremovalornot;
                             var linkText = 'Download Matrix';
-                            console.log("link is",downloadUrl);
-                            var anchorElement = '<hr>Total'+finalperc+'genes matched.<br/> Download log2cpmmatrix matrix created in step1 here: <a href='+downloadUrl+' type="button">'+linkText+'</a>';
+                            var anchorElement ='';
+
+                            if(warning == 0)
+                            {
+
+                                anchorElement += "<p class=\"text-warning\">Warnings: Less than 30% of genes used for training detected, the classifier may generate bias results! ;</p>"
+                            }
+
+                            anchorElement += '<hr>Total '+finalperc+' genes matched.<br/> Download log2cpmmatrix matrix created in step1 here: <a href='+downloadUrl+' type="button">'+linkText+'</a>';
                             var downloadLinkContainer = document.getElementById('outputfile');
                             downloadLinkContainer.innerHTML = anchorElement;
 

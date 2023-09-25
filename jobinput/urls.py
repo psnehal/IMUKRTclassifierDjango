@@ -34,6 +34,8 @@ urlpatterns = [
     path('ajax-posting/', ajax_posting, name='ajax_posting'),
     path('runprestep2/<uuid:foldername>/', views.runprestep2, name='runprestep2'),
     path('DisplayError/', ajax_posting, name='DisplayError'),
+    path('displayResults/<str:folderpath>/', views.displayResults, name='displayResults'),
+
 
 
 

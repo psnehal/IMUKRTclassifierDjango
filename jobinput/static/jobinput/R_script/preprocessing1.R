@@ -95,13 +95,21 @@ whether_perform_PCA_for_next_step<-function(count_df,json_file){
   each_gene_set_array<-lapply(gene_set_list,function(x){sum(x %in% count_df$symbol)})
   #all(TRUE,x %in% count_df$symbol)
   judge_array_all<-sum(sapply(gene_set_list,function(x){
-    ifelse(sum(x %in% count_df$symbol)>length(x)*0.9,1,0)}))
+    ifelse(sum(x %in% count_df$symbol)>length(x)*0.8,1,0)}))
+  judge_warning_all<-sum(sapply(gene_set_list,function(x){
+    ifelse(sum(x %in% count_df$symbol)>length(x)*0.3,0,1)}))
   #judge the result
   if (judge_array_all<length(each_gene_set_array)){
     PCA=1
   }else{PCA=0}
+  if (judge_warning_all<length(each_gene_set_array)){
+    warning=1
+  }else{
+    warning=0
+  }
   return_list=list()
   return_list['PCA']<-PCA
+  return_list['warning']<-warning
   return_list<-append(return_list,each_gene_set_array)
   return(return_list)
 }

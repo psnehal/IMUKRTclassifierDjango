@@ -6,14 +6,16 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-XXaF4oZnlsk85S8x9z3AnfQ2clP9f/ZF+J9XdbTNdja3M/70br4p5mtv5pC4b4l9d5J5fazd8b4X+m3mlXf8fGg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="shortcut icon" href="img/graham_cracker.ico"  type="image/x-icon">
-
-<link rel="stylesheet" href="{% static 'jobinput/css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'jobinput/css/custom.css' %}" type="text/css">
 
 
 
-<style type="text/css">
+
+    <style type="text/css">
 
     /* Sticky footer styles
     -------------------------------------------------- */
@@ -101,7 +103,7 @@
 
 <script>
     $(function () {
-        $('#myTab li:last-child a').tab('show')
+        $('#myTab li:first-child a').tab('show')
     });
 
     document.addEventListener('DOMContentLoaded', function() {
@@ -117,7 +119,7 @@
         var outer_margins = {
             'top':5,
             'bottom':30,
-            'left':195,
+            'left':150,
             'right':2
         };
 
@@ -125,7 +127,7 @@
             'width':600,
             'height':400
         };
-        var about_string = "Subtypeclassifier heatmap";
+        var about_string = "heatmap";
 
         // define arguments object
         var args = {
@@ -133,8 +135,6 @@
             'network_data': network_data,
             'about':about_string,
             'row_tip_callback':hzome.gene_info,
-            'dendro_callback':dendro_callback,
-            'matrix_update_callback':matrix_update_callback,
             'sidebar_width':150,
             // 'tile_colors':['#ED9124','#1C86EE'],
             //'ini_view':{'N_row_var':20},
@@ -148,7 +148,7 @@
 
         cgm = Clustergrammer(args);
 
-        check_setup_enrichr(cgm);
+        //check_setup_enrichr(cgm);
 
         d3.select(cgm.params.root + ' .wait_message').remove();
 
@@ -262,10 +262,10 @@
 
 
 <main role="main" class="container bg-white ">
-    <div class="row ">
+    <div class="row " style="padding-left: 25px">
 
 
-        <div class="row">
+        <div class="row" >
 
 
             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -283,12 +283,12 @@
 
             <div class="tab-content">
                 <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    <a href="{% url 'download_result' %}?foldername={{foldername}}" type="button">Download Matrix</a>
+                    <a style="padding-top: 10px" href="{% url 'download_result' %}?foldername={{foldername}}" type="button">Download Results</a>
 
 
 
                     <h3>Heatmap</h3>
-                    <title>Clustergrammer.js</title>
+
 
 
                     <div id='container-id-1'>
@@ -299,6 +299,7 @@
                 </div>
                 <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                     <br/><br/>
+                    <a style="padding-top: 10px" href="{% url 'downloadgeneset' %}?filename={{foldername}}" type="button">Download File</a>
                     <h3>Predict Results </h3>
                     <table class="table table-striped">
                         <tr> <td>Sample</td>
@@ -307,6 +308,9 @@
                         </tr>
 
                         {% for b in arr.itertuples %}
+                            {% if forloop.first %}
+                                {% comment %} Skip the header row {% endcomment %}
+                            {% endif %}
 
                         <tr>
                             <td>{{ b.1 }}</td><td> {{ b.2 }}</td><td> {{ b.3 }}</td>

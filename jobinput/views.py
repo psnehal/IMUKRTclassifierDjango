@@ -110,10 +110,16 @@ def downloadgeneset(request):
         response = HttpResponse(file_save_path, content_type='csv')
         # Set the HTTP header for sending to browser
         response['Content-Disposition'] = "attachment; filename=%s" , filename
-    else:
-        print("inside xlsl loop ")
+    elif(filename=="geneset.xlsx"):
         response = FileResponse(open(file_save_path, 'rb'), content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
-        response['Content-Disposition'] = 'attachment; filename="example.xlsx"'
+        response['Content-Disposition'] = 'attachment; filename="TrainingGeneList.xlsx"'
+    else:
+        print("inside predict loop loop ")
+        file_save_path = os.path.join(settings.MEDIA_ROOT, filename,"predict_result.txt" )
+        print(file_save_path)
+        response = FileResponse(open(file_save_path, 'rb'), content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename="predict_result.txt"'
+
 
 
 
@@ -310,7 +316,7 @@ def jobsubmit(request):
     valuetotal=0
     for (k, v) in pcadata.items():
         print("Key: " + k)
-        if(k != "PCA"):
+        if(k != "PCA" and k !="warning"):
             keytotal = keytotal+int(k)
             valuetotal= valuetotal+v
             print("Value: " + str(v))
@@ -394,14 +400,15 @@ def runstepone(request):
         pcafile = File(pcaf)
         with open(pcaf) as jsonFile:
             pcadata = json.load(jsonFile)
+
     else:
         print("its in th else loop")
         response = redirect('DisplayError')
-        keytotal= 0
+    keytotal= 0
     valuetotal=0
     for (k, v) in pcadata.items():
         print("Key: " + k)
-        if(k != "PCA"):
+        if(k != "PCA" and k !="warning"):
             keytotal = keytotal+int(k)
             valuetotal= valuetotal+v
             print("Value: " + str(v))
@@ -500,36 +507,8 @@ def runclassifier(request):
 
 
 
-    #python3 IMU_KRT_classifier.py -dir ./ -PCA 1 -log2cpmmatrix ../demo_data/cpm_input_classifier.csv -output_dir ../demo_result/
-
-
-
     cols = [0, 1, 2] # add more columns here
-
     df = pd.DataFrame()
-    #arr = pd.read_csv("/Users/snehalpatil/Documents/GithubProjects/ShitingProject/IMUKRTclassifier/demo_result/predict_result.txt", sep='\t', header=None, usecols=cols)
-    # for ind in arr.index:
-    #   print(arr[0][ind],arr[1][ind], arr[2][ind])
-    # with open('/Users/snehalpatil/Documents/GithubProjects/ShitingProject/IMUKRTclassifier/demo_result/predict_result.txt') as f:
-    #     lines = f.readlines()
-    #     count = 0
-    #     for line in lines:
-    #         count += 1
-    #         print(f'line {count}: {line.split()}')
-    #         (key, val) = line.split()
-    #         d[key] = val
-
-    #python3 IMU_KRT_classifier.py -dir ./ -PCA 1 -log2cpmmatrix samples_result/18_plus_FFPE.csv -output_dir ./
-    #workdir, pca, input,output_dir,models,gene_set
-
-    # python3 IMU_KRT_classifier.py
-    # -dir /Users/snehalpatil/Documents/GithubProjects/ShitingProject/IMUKRTclassifier-lab_version/IMUKRT_classifier_lab_version/python_script
-    # -PCA 1
-    # -log2cpmmatrix  /Users/snehalpatil/Documents/GithubProjects/ShitingProject/IMUKRTclassifier-lab_version/IMUKRT_classifier_lab_version/demo_data/cpm_input_classifier.csv
-    # -output_dir /Users/snehalpatil/Documents/GithubProjects/ShitingProject/tumourclass/media/2d14ba8a-b589-4fe6-a28b-4d654c77ba10/
-    # -models rf,knn,gnb,svm
-    # -genes 168,960
-
     models ='f,knn,gnb,svm,elasticnet'
     gene_set ='168,960'
     #def runfile(workdir, pca, input,output_dir,imumodel,gene_set):
@@ -548,8 +527,37 @@ def runclassifier(request):
     print(folder_save_path)
 
     runfile(pyfilepath,pcaval,file_save_path,folder_save_path,None,None)
-    result_file_path=file_save_path = os.path.join(settings.MEDIA_ROOT, folderpath,"predict_result.txt" )
-    arr = pd.read_csv(result_file_path, sep='\t', header=None, usecols=cols)
+
+    # result_file_path=file_save_path = os.path.join(settings.MEDIA_ROOT, folderpath,"predict_result.txt" )
+    # arr = pd.read_csv(result_file_path, sep='\t', header=None, usecols=cols)
+    #
+    # net = Network()
+    # net.load_file(heatmap_file)
+    # net.cluster()
+    # net.write_json_to_file('viz', heatmap_json)
+    #
+    #
+    # with open(heatmap_json) as jsonFile:
+    #     finaljson = json.load(jsonFile)
+
+
+    #return redirect(request, "displayResult", {"arr": arr,"finaljson":finaljson,"foldername":encoded_foldername} )
+    return redirect("displayResults", folderpath=folderpath)
+
+
+
+def displayResults(request, folderpath):
+    print("****************************",folderpath)
+    encoded_foldername = quote(folderpath)
+    result_file_path=os.path.join(settings.MEDIA_ROOT, folderpath,"predict_result.txt" )
+    heatmap_file = os.path.join(settings.MEDIA_ROOT, folderpath,"heatmap_data.txt" )
+    heatmap_json = os.path.join(settings.MEDIA_ROOT, folderpath,"mult_view.json" )
+    pca_json = os.path.join(settings.MEDIA_ROOT, folderpath,"PCA_related.json" )
+    folder_save_path=os.path.join(settings.MEDIA_ROOT, folderpath)
+
+
+    df = pd.DataFrame()
+    arr = pd.read_csv(result_file_path, sep='\t', skiprows=1)
 
     net = Network()
     net.load_file(heatmap_file)
@@ -561,6 +569,7 @@ def runclassifier(request):
         finaljson = json.load(jsonFile)
 
 
-    return render(request, "runclassifier.html", {"arr": arr,"finaljson":finaljson,"foldername":encoded_foldername} )
+    return render(request, "displayResults.html", {"arr": arr,"finaljson":finaljson,"foldername":encoded_foldername} )
+
 
 
