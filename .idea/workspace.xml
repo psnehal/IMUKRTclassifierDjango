@@ -4425,8 +4425,6 @@
       <change beforePath="$PROJECT_DIR$/../../LRPath/robinhood/parse_.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../LRPath/robinhood/parse_.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LRPath/robinhood/thetawarrior.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../LRPath/robinhood/thetawarrior.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LRPath/robinhood/tweeterParse.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../LRPath/robinhood/tweeterParse.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../pheweb/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../pheweb/command_line.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../pheweb/conf_utils.py" beforeDir="false" />
@@ -4529,7 +4527,7 @@
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="308">
-              <caret line="49" column="91" lean-forward="true" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="91" />
+              <caret line="49" column="91" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="91" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -4621,7 +4619,7 @@
         <entry file="file://$PROJECT_DIR$/jobinput/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
-              <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="123" />
+              <caret line="123" selection-start-line="123" selection-end-line="123" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -4980,17 +4978,17 @@
       <workItem from="1694181430052" duration="340000" />
       <workItem from="1694182461869" duration="8308000" />
       <workItem from="1694809447555" duration="817000" />
-      <workItem from="1695613806244" duration="9480000" />
+      <workItem from="1695613806244" duration="9976000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="380821000" />
+    <option name="totallyTimeSpent" value="381317000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1599" y="105" width="1234" height="771" extended-state="0" />
+    <frame x="-1599" y="105" width="1449" height="843" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28606158" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24361628" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -5007,7 +5005,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info active="true" anchor="bottom" x="-1864" y="172" width="1848" height="747" id="Terminal" order="10" sideWeight="0.9057178" visible="true" weight="0.89069426" />
+      <window_info active="true" anchor="bottom" x="-1864" y="172" width="1848" height="747" id="Terminal" order="10" sideWeight="0.9057178" visible="true" weight="0.80507344" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.09428224" side_tool="true" weight="0.43837085" />
       <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -5368,7 +5366,7 @@
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
-          <caret line="49" column="91" lean-forward="true" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="91" />
+          <caret line="49" column="91" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="91" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -5401,7 +5399,7 @@
     <entry file="file://$PROJECT_DIR$/jobinput/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="123" />
+          <caret line="123" selection-start-line="123" selection-end-line="123" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
           </folding>
