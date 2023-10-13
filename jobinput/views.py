@@ -291,41 +291,49 @@ def jobsubmit(request):
         pcaf = file_save_path + '/PCA_related.json'
         outputfile =''
         outputfilename=''
-        if(res == 0 and batchremovalornot == 'not' ):
-            outputfile = file_save_path + '/cpm_input_classifier_no_batchre.csv'
-            print("its in not batchremovalornot loop ")
-            some_file = open(outputfile, "r")
-            django_file = File(some_file)
-            #print("pcaf", pcaf)
-            pcafile = File(pcaf)
-            with open(pcaf) as jsonFile:
-                pcadata = json.load(jsonFile)
-        elif(res == 0 and batchremovalornot == 'combat' ):
-            outputfile =file_save_path  + '/raw_count_input.csv'
-            print("its in batchremovalornot yes loop")
-            some_file = open(outputfile, "r")
-            django_file = File(some_file)
-            #print("pcaf", pcaf)
-            pcafile = File(pcaf)
-            with open(pcaf) as jsonFile:
-                pcadata = json.load(jsonFile)
-        else:
-            #print("its in th else loop")
-            response = redirect('DisplayError')
-    keytotal= 0
-    valuetotal=0
-    for (k, v) in pcadata.items():
-        print("Key: " + k)
-        if(k != "PCA" and k !="warning"):
-            keytotal = keytotal+int(k)
-            valuetotal= valuetotal+v
-            print("Value: " + str(v))
+        pcadata=''
+        finalstringno=''
+        if(res ==0):
+            print("res is 0")
+            if(res == 0 and batchremovalornot == 'not' ):
+                outputfile = file_save_path + '/cpm_input_classifier_no_batchre.csv'
+                print("its in not batchremovalornot loop ")
+                some_file = open(outputfile, "r")
+                django_file = File(some_file)
+                #print("pcaf", pcaf)
+                pcafile = File(pcaf)
+                with open(pcaf) as jsonFile:
+                    pcadata = json.load(jsonFile)
+            elif(res == 0 and batchremovalornot == 'combat' ):
+                outputfile =file_save_path  + '/raw_count_input.csv'
+                print("its in batchremovalornot yes loop")
+                some_file = open(outputfile, "r")
+                django_file = File(some_file)
+                #print("pcaf", pcaf)
+                pcafile = File(pcaf)
+                with open(pcaf) as jsonFile:
+                    pcadata = json.load(jsonFile)
+            keytotal= 0
+            valuetotal=0
+            for (k, v) in pcadata.items():
+                print("Key: " + k)
+                if(k != "PCA" and k !="warning"):
+                    keytotal = keytotal+int(k)
+                    valuetotal= valuetotal+v
+                    print("Value: " + str(v))
 
-    print("keytotal",keytotal)
-    print("valuetotal",valuetotal)
-    finalno=  round((valuetotal*100)/keytotal,2)
-    print("finalno: " + str(finalno))
-    finalstringno = str(valuetotal)+" out of "+str(keytotal)
+            print("keytotal",keytotal)
+            print("valuetotal",valuetotal)
+            finalno=  round((valuetotal*100)/keytotal,2)
+            print("finalno: " + str(finalno))
+            finalstringno = str(valuetotal)+" out of "+str(keytotal)
+
+        else:
+            print("res is 1")
+            print("its in th else loop")
+            response = redirect('DisplayError')
+
+
 
 
 
@@ -427,8 +435,8 @@ def runstepone(request):
 
 
 def runprestep2(request,foldername):
-    print("froms tep 2 preprocessing step")
-    print(foldername)
+    #print("froms tep 2 preprocessing step")
+    #print(foldername)
 
 
 
