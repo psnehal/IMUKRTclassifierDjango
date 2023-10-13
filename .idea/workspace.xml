@@ -4425,8 +4425,6 @@
       <change beforePath="$PROJECT_DIR$/../../LRPath/robinhood/parse_.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../LRPath/robinhood/parse_.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LRPath/robinhood/thetawarrior.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../LRPath/robinhood/thetawarrior.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LRPath/robinhood/tweeterParse.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../LRPath/robinhood/tweeterParse.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobinput/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../pheweb/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../pheweb/command_line.py" beforeDir="false" />
@@ -4586,8 +4584,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="281" selection-start-line="281" selection-end-line="281" />
+            <state relative-caret-position="510">
+              <caret line="274" lean-forward="true" selection-start-line="274" selection-end-line="274" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#td#1;n#tr#0;n#table#0;n#div#0;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -4980,12 +4978,12 @@
       <workItem from="1695930846974" duration="606000" />
       <workItem from="1696536557643" duration="1089000" />
       <workItem from="1696564562082" duration="193000" />
-      <workItem from="1697170766926" duration="3204000" />
+      <workItem from="1697170766926" duration="3436000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="389528000" />
+    <option name="totallyTimeSpent" value="389760000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
@@ -5392,8 +5390,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="281" selection-start-line="281" selection-end-line="281" />
+        <state relative-caret-position="510">
+          <caret line="274" lean-forward="true" selection-start-line="274" selection-end-line="274" />
           <folding>
             <element signature="n#style#0;n#div#2;n#td#1;n#tr#0;n#table#0;n#div#0;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
