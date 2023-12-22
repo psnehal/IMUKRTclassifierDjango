@@ -1,0 +1,6 @@
+ <ul>
+                    <li>Shiting Li, Bailey F. Garb, Tingting Qin, Snehal Patil, Sarah Soppe, Elizabeth Lopez, Nisha J. D’Silva, Laura S. Rozek, Maureen A. Sartor. Tumor Subtype Classification Tool for HPV-associated Head and Neck Cancers</li>
+                    <li>Zhang Y, et al. Subtypes of HPV-positive head and neck cancers are associated with HPV characteristics, copy number alterations, PIK3CA mutation, and pathway signatures. Clinical Cancer Research. 2016. 22(18):4735-45.</li>
+                    <li>Leemans CR, Snijders PJF, Brakenhoff RH. The molecular landscape of head and neck cancer. Nat Rev Cancer. 2018;18(5):269-82.</li>
+                    <li>Qin T, Li S, Henry LE, Liu S, Sartor MA. Molecular Tumor Subtypes of HPV-Positive Head and Neck Cancers: Biological Characteristics and Implications for Clinical Outcomes. 2021; 13(11):2721.</li>
+</ul>

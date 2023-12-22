@@ -166,6 +166,4 @@ STATIC_ROOT = "/Users/snehalpatil/Documents/GithubProjects/ShitingProject/tumour
 #
 # STATICFILES_DIRS = [BASE_DIR / "static"]
 # CSRF_TRUSTED_ORIGINS = ['https://hpv-hnscc-subtypeclassifier.dcmb.med.umich.edu','https://*.127.0.0.1']
-# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https'
-
-
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

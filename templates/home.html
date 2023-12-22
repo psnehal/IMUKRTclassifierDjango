@@ -41,10 +41,8 @@
                         </figure>
                         </br>
                         </br>
-                        <b>Background:</b>
-                        HPV-associated head and neck squamous cell carcinomas (HNSCCs) are classified into two main tumor subtypes: IMU and KRT, which have been validated by several studies.  Knowing the subtype of each tumor is important for research, due to their distinct tumor biology and clinical outcomes.
 
-                        This IMU/KRT classifier uses five well-trained machine learning (ML) models with majority voting to classify the subtype of each HPV+ HNSCC sample.
+                        {{ bakdata |safe}}
                         </br>
                         <p style="text-align: center">
                         <img src="{% static 'jobinput/images/figure1.png' %}" class="img-thumbnail" alt="Figure 2"  width="70%" >
@@ -97,8 +95,9 @@
                                         <input id="uploadfile" type="file" name="uploadfile" size="30"
                                                class="formObject">
                                         <br>
-                                        <span class="footnote">Input data should be a single file (csv/tab delimited)  either containing raw RNA-seq counts (e.g. from HTSeq or featureCounts) or log2cpm (e.g. from edgeR) values. The first row must be the unique sample IDs and the first column must be the gene symbols. A sample file is available  <a href="/downloadgeneset?filename=sample.csv" download>here</a>. Note: Do not include any identifiable information.
-                    </span>
+                                        <span class="footnote">Input data should be a single file (csv/tab delimited)  either containing raw RNA-seq counts (e.g. from HTSeq or featureCounts) or log2cpm (e.g. from edgeR) values. The first row must be the unique sample IDs and the first column must be the gene symbols. A sample file is available  <a href="/downloadgeneset?filename=sample.csv" download>here</a>.</span>
+                                        <br><span class="footnote"><b>Note: Do not include any identifiable information.</b></span>
+                                        </span>
                                     </td>
                                 </tr>
 
@@ -117,7 +116,9 @@
                                             <label class="form-check-label" for="inlineCheckbox2">No</label>
                                         </div>
                                         <br>
-                                        <span class="footnote">Upload data for all batches in one file above, and here upload (tab delimited or csv) a  file indicating the batch for each sample. The first column of the file should match the sample names in the first row of the input data file, and the second column should indicate the batch number.</span>
+                                        <span class="footnote">
+                                            Upload data for all batches in one file above, and here upload a file (tab delimited or csv) indicating the batch for each sample. The first column of the file should match the sample names in the first row of the input data file, and the second column should indicate the batch number
+                                        </span>
 
                                     </td>
 
@@ -293,7 +294,8 @@
                                     if(warning == 0)
                                     {
 
-                                        anchorElement += "<p class=\"text-warning\">\"Warnings: Less than 30% of genes used for training detected, the classifier may generate bias results! ;\"</p>"
+                                        anchorElement += "<p class=\"text-warning\">\Warnings: Less than 30% of genes used for training detected, the classifier may generate bias results! ;"</p>"
+                                        alert()
                                     }
 
                                     anchorElement += '<hr>Total '+finalperc+' genes matched.<br/> Download log2cpmmatrix matrix created in step1 here: <a href='+downloadUrl+' type="button">'+linkText+'</a>';
@@ -499,12 +501,7 @@
 
             <div class="form-group text-justify p-5">
                 <label class="pr-4" for="pcasel"> <b>Supporting Citations</b>  </label>
-                <ul>
-                    <li>In Progress</li>
-                    <li>Zhang Y, et al. Subtypes of HPV-positive head and neck cancers are associated with HPV characteristics, copy number alterations, PIK3CA mutation, and pathway signatures. Clinical Cancer Research. 2016. 22(18):4735-45.</li>
-                    <li>Leemans CR, Snijders PJF, Brakenhoff RH. The molecular landscape of head and neck cancer. Nat Rev Cancer. 2018;18(5):269-82.</li>
-                    <li>Qin T, Li S, Henry LE, Liu S, Sartor MA. Molecular Tumor Subtypes of HPV-Positive Head and Neck Cancers: Biological Characteristics and Implications for Clinical Outcomes. 2021; 13(11):2721.</li>
-                </ul>
+               {{refdata|safe}}
             </div>
         </div>
 

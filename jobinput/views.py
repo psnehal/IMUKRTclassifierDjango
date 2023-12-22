@@ -8,6 +8,7 @@ from django.http import HttpResponse
 from django.http import FileResponse
 from django.http import JsonResponse
 
+from django.utils.html import escape, mark_safe
 from django.shortcuts import redirect
 
 from django.shortcuts import render
@@ -49,11 +50,29 @@ from urllib.parse import quote
 #IMU_KRT_classifier.py [-h] -dir DIR -PCA PCA -log2cpmmatrix INPUT
 
 def home(request,*args,**kwargs):
-    print("its in the home")
+    print("its in the home", os.path.join(settings.STATIC_ROOT, 'reference.txt'))
     print(args, kwargs)
+
+    reffile =  os.path.join(settings.STATIC_ROOT+ "/"+ 'reference.txt')
+    print(reffile)
+    backgroundfile=  os.path.join(settings.STATIC_ROOT +"/" + 'background.txt')
+    with open(reffile, 'r') as file:
+        content = file.read()
+    with open(backgroundfile, 'r') as file:
+        backcontent = file.read()
+
+
+
+
+
+
+
+
+
+
     form = PostForm(request.POST)
     #return HttpResponse("<h1>Hello World</h1>") # string of HTML code
-    return render (request, "home.html",{"form": form })
+    return render (request, "home.html",{"form": form, "refdata": content, "bakdata" : backcontent})
 
 
 def heatmap(request,*args,**kwargs):
@@ -239,6 +258,7 @@ def jobsubmit(request):
         print("includeFF18ornot",includeFF18ornot)
 
   #batchremovalornot logic
+    #1 is yes and 0 is not
         if (int(batcheff) == 1) or int(includeFF18ornot) == 1:
             print("yes")
             batchremovalornot = "combat"

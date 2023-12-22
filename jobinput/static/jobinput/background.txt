@@ -1,0 +1,5 @@
+<b>Background:</b>
+HPV-associated head and neck squamous cell carcinomas (HNSCCs) are classified into two main tumor subtypes: IMU and KRT, which have been validated by several studies.  Knowing the subtype of each tumor is important for research, due to their distinct tumor biology and clinical outcomes.
+
+This IMU/KRT classifier uses five well-trained machine learning (ML) models with majority voting to classify the subtype of each HPV+ HNSCC sample.
+</br>
