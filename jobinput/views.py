@@ -585,7 +585,7 @@ def displayResults(request, folderpath):
 
 
     df = pd.DataFrame()
-    arr = pd.read_csv(result_file_path, sep='\t', skiprows=1)
+    arr = pd.read_csv(result_file_path, sep='\t')
 
     net = Network()
     net.load_file(heatmap_file)

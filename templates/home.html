@@ -294,7 +294,7 @@
                                     if(warning == 0)
                                     {
 
-                                        anchorElement += "<p class=\"text-warning\">\Warnings: Less than 30% of genes used for training detected, the classifier may generate bias results! ;"</p>"
+                                        anchorElement += "<p class=\"text-warning\">Warnings: Less than 30% of genes used for training detected, the classifier may generate bias results!</p>";
                                         alert()
                                     }
 
@@ -428,7 +428,10 @@
                             if(warning == 0)
                             {
 
-                                anchorElement += "<p class=\"text-warning\">Warnings: Less than 30% of genes used for training detected, the classifier may generate bias results! ;</p>"
+
+
+                                anchorElement += "<p class=\"text-warning\">Warnings: Less than 30% of genes used for training detected, the classifier may generate bias results!</p>";
+
                             }
 
                             anchorElement += '<hr>Total '+finalperc+' genes matched.<br/> Download log2cpmmatrix matrix created in step1 here: <a href='+downloadUrl+' type="button">'+linkText+'</a>';

@@ -4418,7 +4418,6 @@
       <change afterPath="$PROJECT_DIR$/../../EncoreOriginal/venv/lib/python3.8/site-packages/werkzeug/wrappers/user_agent.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../EncoreOriginal/venv/lib/python3.8/site-packages/werkzeug/wsgi.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../EncoreOriginal/venv/pyvenv.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tumourclass/settings_example.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../CoronoBramarsProject/covidproject/covidproject/src/main/groovy/covidproject/org/DataValidator.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LRPath/robinhood/buttons.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../LRPath/robinhood/buttons.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LRPath/robinhood/inputsentence.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../LRPath/robinhood/inputsentence.py" afterDir="false" />
@@ -4438,11 +4437,9 @@
       <change beforePath="$PROJECT_DIR$/jobinput/static/jobinput/json/mult_view.json" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/static/jobinput/json/mult_view.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jobinput/static/main.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/jobinput/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobinput/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/jobinput/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/heatmap.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/heatmap.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/jobsubmit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/jobsubmit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tumourclass/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/tumourclass/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../pheweb/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../pheweb/command_line.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../pheweb/conf_utils.py" beforeDir="false" />
@@ -4566,11 +4563,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+            <state relative-caret-position="416">
+              <caret line="306" selection-start-line="306" selection-end-line="306" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#td#1;n#tr#0;n#table#0;n#div#0;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -4584,7 +4581,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="533">
+            <state relative-caret-position="1127">
               <caret line="49" column="68" selection-start-line="49" selection-start-column="53" selection-end-line="49" selection-end-column="68" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -4597,7 +4594,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tumourclass/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
+            <state relative-caret-position="3634">
               <caret line="159" column="11" selection-start-line="159" selection-end-line="159" selection-end-column="11" />
               <folding>
                 <element signature="e#312#336#0" expanded="true" />
@@ -4616,11 +4613,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jobinput/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="74" column="83" selection-start-line="74" selection-start-column="76" selection-end-line="74" selection-end-column="83" />
+            <state relative-caret-position="236">
+              <caret line="587" column="48" selection-start-line="587" selection-start-column="48" selection-end-line="587" selection-end-column="48" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -4631,7 +4628,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/heatmap.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4923">
+            <state relative-caret-position="276">
               <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
@@ -4649,8 +4646,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>finalperc= response.finalperc</find>
-      <find>finalperc=</find>
       <find>foldename = response.foldername;</find>
       <find>downloadfile</find>
       <find>redirect</find>
@@ -4679,6 +4674,8 @@
       <find>stat</find>
       <find>staticroot</find>
       <find>RSCRIPT_PATH</find>
+      <find>anchorElement</find>
+      <find>anchorElement += &quot;&lt;p class=\&quot;text-warning\&quot;&gt;Warnings</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -4720,16 +4717,16 @@
         <option value="$PROJECT_DIR$/jobinput/static/jobinput/css/custom.css" />
         <option value="$PROJECT_DIR$/templates/displayResults.html" />
         <option value="$PROJECT_DIR$/tumourclass/settings.py" />
-        <option value="$PROJECT_DIR$/jobinput/views.py" />
         <option value="$PROJECT_DIR$/templates/home.html" />
+        <option value="$PROJECT_DIR$/jobinput/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1871" />
-    <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="1057" />
+    <option name="x" value="229" />
+    <option name="y" value="53" />
+    <option name="width" value="1680" />
+    <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -4737,8 +4734,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -4760,6 +4755,19 @@
             <path>
               <item name="tumourclass" type="b2602c69:ProjectViewProjectNode" />
               <item name="tumourclass" type="462c0819:PsiDirectoryNode" />
+              <item name="jobinput" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tumourclass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tumourclass" type="462c0819:PsiDirectoryNode" />
+              <item name="jobinput" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="jobinput" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tumourclass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tumourclass" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -4771,6 +4779,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -4953,18 +4963,21 @@
       <workItem from="1698430561668" duration="1303000" />
       <workItem from="1699645894713" duration="1326000" />
       <workItem from="1703101104505" duration="1066000" />
-      <workItem from="1703104579179" duration="4589000" />
+      <workItem from="1703104579179" duration="5106000" />
+      <workItem from="1704151749666" duration="398000" />
+      <workItem from="1705077557454" duration="2452000" />
+      <workItem from="1706213708044" duration="731000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="398811000" />
+    <option name="totallyTimeSpent" value="402909000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1871" y="23" width="1920" height="1057" extended-state="0" />
+    <frame x="229" y="53" width="1680" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16041666" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18333334" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -4981,7 +4994,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info active="true" anchor="bottom" x="-1864" y="172" width="1848" height="747" id="Terminal" order="10" sideWeight="0.9057178" visible="true" weight="0.3468328" />
+      <window_info anchor="bottom" x="-1864" y="172" width="1848" height="747" id="Terminal" order="10" sideWeight="0.9057178" visible="true" weight="0.3129689" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.09428224" side_tool="true" weight="0.43837085" />
       <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -5312,15 +5325,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tumourclass/asgi.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tumourclass/settings_example.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
+        <state relative-caret-position="1127">
           <caret line="49" column="68" selection-start-line="49" selection-start-column="53" selection-end-line="49" selection-end-column="68" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -5329,16 +5336,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/heatmap.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4923">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tumourclass/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
+        <state relative-caret-position="3634">
           <caret line="159" column="11" selection-start-line="159" selection-end-line="159" selection-end-column="11" />
           <folding>
             <element signature="e#312#336#0" expanded="true" />
@@ -5346,25 +5346,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jobinput/views.py">
+    <entry file="file://$PROJECT_DIR$/tumourclass/settings_example.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tumourclass/asgi.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/heatmap.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="74" column="83" selection-start-line="74" selection-start-column="76" selection-end-line="74" selection-end-column="83" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="276">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+        <state relative-caret-position="416">
+          <caret line="306" selection-start-line="306" selection-end-line="306" />
           <folding>
             <element signature="n#style#0;n#div#2;n#td#1;n#tr#0;n#table#0;n#div#0;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobinput/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="587" column="48" selection-start-line="587" selection-start-column="48" selection-end-line="587" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
           </folding>
         </state>
       </provider>
